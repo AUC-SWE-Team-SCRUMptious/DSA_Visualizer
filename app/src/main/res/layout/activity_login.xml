@@ -29,7 +29,7 @@
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="260dp"
-            android:layout_height="48dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="12dp"
             android:autofillHints="password"
             android:background="#FFFFFF"
@@ -41,8 +41,8 @@
         <!-- Login Button -->
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="134dp"
+            android:layout_height="60dp"
             android:background="#FFFFFF"
             android:text="@string/login" />
 

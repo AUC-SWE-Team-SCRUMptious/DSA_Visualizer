@@ -29,14 +29,14 @@ class PasswordValidator (var pass: String){
                 {
                     lowercaseReq = true;
                 }
-                if (pass[item].isDigit() && !numReq)
+                if (!numReq && (pass[item] == '0' || pass[item] == '1' || pass[item] == '2' || pass[item] == '3' || pass[item] == '4' || pass[item] == '5' || pass[item] == '6' || pass[item] == '7' || pass[item] == '8' || pass[item] == '9') )
                 {
                     numReq = true;
                 }
             }
         }
 
-        if (lengthCheck && uppercaseReq && lowercaseReq && numReq && valid)
+        if (lengthCheck && uppercaseReq && lowercaseReq && numReq)
             valid = true;
     }
 }

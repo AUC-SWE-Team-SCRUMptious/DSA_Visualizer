@@ -30,9 +30,10 @@ class Register : AppCompatActivity() {
                 val mailValidator = EmailValidator(email)
                 if (passValidator.valid && mailValidator.valid)
                 {
+                    Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                     firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener {
                         if (it.isSuccessful){
-                            Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+
                             val intent = Intent(this,Login::class.java)
                             startActivity((intent))
                         }
