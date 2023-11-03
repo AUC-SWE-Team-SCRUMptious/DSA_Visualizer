@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.scrumptious.algorithmvisualizer"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.scrumptious.algorithmvisualizer"
