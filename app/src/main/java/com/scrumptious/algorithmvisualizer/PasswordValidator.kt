@@ -21,17 +21,21 @@ class PasswordValidator (var pass: String){
         if (lengthCheck)
         {
             for (item in pass.indices){
-                if (pass[item] == pass[item].uppercaseChar() && !uppercaseReq)
-                {
-                    uppercaseReq = true;
-                }
-                if (pass[item] == pass[item].lowercaseChar() && !lowercaseReq)
-                {
-                    lowercaseReq = true;
-                }
-                if (!numReq && (pass[item] == '0' || pass[item] == '1' || pass[item] == '2' || pass[item] == '3' || pass[item] == '4' || pass[item] == '5' || pass[item] == '6' || pass[item] == '7' || pass[item] == '8' || pass[item] == '9') )
+                // == '0' || pass[item] == '1' || pass[item] == '2' || pass[item] == '3' || pass[item] == '4' || pass[item] == '5' || pass[item] == '6' || pass[item] == '7' || pass[item] == '8' || pass[item] == '9'
+                if (pass[item].isDigit())
                 {
                     numReq = true;
+                }
+                else
+                {
+                    if (pass[item] == pass[item].uppercaseChar() && !uppercaseReq)
+                    {
+                        uppercaseReq = true;
+                    }
+                    if (pass[item] == pass[item].lowercaseChar() && !lowercaseReq)
+                    {
+                        lowercaseReq = true;
+                    }
                 }
             }
         }
