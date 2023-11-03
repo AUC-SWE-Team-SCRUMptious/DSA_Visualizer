@@ -29,7 +29,7 @@ class PasswordValidator (var pass: String){
                 {
                     lowercaseReq = true;
                 }
-                if (pass[item].isDigit() && !lowercaseReq)
+                if (pass[item].isDigit() && !numReq)
                 {
                     numReq = true;
                 }

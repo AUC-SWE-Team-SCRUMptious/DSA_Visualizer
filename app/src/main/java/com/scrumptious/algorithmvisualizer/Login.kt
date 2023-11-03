@@ -39,6 +39,7 @@ class Login : AppCompatActivity() {
 
                     }
                 }
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
 

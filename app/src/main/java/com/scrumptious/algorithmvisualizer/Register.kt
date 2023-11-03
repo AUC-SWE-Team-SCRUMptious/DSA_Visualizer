@@ -32,6 +32,7 @@ class Register : AppCompatActivity() {
                 {
                     firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener {
                         if (it.isSuccessful){
+                            Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this,Login::class.java)
                             startActivity((intent))
                         }
@@ -50,6 +51,10 @@ class Register : AppCompatActivity() {
                     if (!passValidator.numReq){
                         Toast.makeText(this,"Password should contain at least one number", Toast.LENGTH_SHORT).show()
                     }
+                    if (!mailValidator.valid){
+                        Toast.makeText(this,"Email is invalid", Toast.LENGTH_SHORT).show()
+                    }
+
                 }
 
 
