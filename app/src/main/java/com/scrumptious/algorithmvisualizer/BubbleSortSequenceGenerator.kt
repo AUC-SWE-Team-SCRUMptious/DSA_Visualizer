@@ -26,7 +26,7 @@ class BubbleSortSequenceGenerator{
     }
 }
 
-
+/*
 fun displaySteps(inputArr: Array<Int>, steps: MutableList<Pair<Array<Int>, Array<Int>>>) {
     println("Original Array: ${inputArr.joinToString()}")
     for ((i, step) in steps.withIndex()) {
@@ -53,7 +53,7 @@ fun main() {
     }
 }
 
-/*
+
 Test Cases:
 
 Original Array: 5, 6, 7, 1, 1
