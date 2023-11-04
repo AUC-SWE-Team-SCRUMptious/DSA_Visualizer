@@ -34,6 +34,8 @@ fun displaySteps(inputArr: Array<Int>, steps: Array<Pair<Array<Int>, Array<Int>>
     }
 }
 
+/*
+Driver Code to test function
 fun main() {
     val inputArrays = arrayOf(
         arrayOf(5, 6, 7, 1, 1),
@@ -49,4 +51,4 @@ fun main() {
         displaySteps(inputArr, stepsAndSwaps)
         println()
     }
-}
+}*/
