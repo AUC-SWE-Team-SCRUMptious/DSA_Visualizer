@@ -20,14 +20,12 @@ class Register : AppCompatActivity() {
         //links view to class
         setContentView(binding.root)
 
+        //on click, go to login
         firebaseAuth= FirebaseAuth.getInstance()
-        /*
         binding.textView2.setOnClickListener {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
-        TODO:Return the code when login is implemented
-         */
 
         //when any click occurs, run this
         binding.registerButton.setOnClickListener{
@@ -44,11 +42,9 @@ class Register : AppCompatActivity() {
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show() //output message
-                                /*
+                        //go to the login page
                         val intent = Intent(this,Login::class.java)
                         startActivity((intent))
-                        TODO: Retrun the code when Login is implemented
-                         */
                             }
                             else{
                                 try {
