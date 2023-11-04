@@ -1,33 +1,33 @@
 package com.scrumptious.algorithmvisualizer
 
-fun bubbleSortSequenceGenerator(inputArr: Array<Int>): Array<Pair<Array<Int>, Array<Int>>> {
-    val n = inputArr.size
-    val sortArr = inputArr.copyOf()
-    val stepsAndSwaps = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+class BubbleSortSequenceGenerator{
+    var result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
 
-    for (i in 0 until n - 1) {
-        var swapped = false
-        for (j in 0 until n - i - 1) {
-            if (sortArr[j] > sortArr[j + 1]) {
-                val temp = sortArr[j]
-                sortArr[j] = sortArr[j + 1]
-                sortArr[j + 1] = temp
-                val indices = arrayOf(j, j + 1)
-                stepsAndSwaps.add(Pair(sortArr.copyOf(), indices))
-                swapped = true
+    fun sequenceGenerator(inputArr: Array<Int>){
+        val n = inputArr.size
+        val sortArr = inputArr.copyOf()
+
+        for (i in 0 until n - 1) {
+            var swapped = false
+            for (j in 0 until n - i - 1) {
+                if (sortArr[j] > sortArr[j + 1]) {
+                    val temp = sortArr[j]
+                    sortArr[j] = sortArr[j + 1]
+                    sortArr[j + 1] = temp
+                    val indices = arrayOf(j, j + 1)
+                    result.add(Pair(sortArr.copyOf(), indices))
+                    swapped = true
+                }
+            }
+            if (!swapped) {
+                break
             }
         }
-
-        if (!swapped) {
-            break
-        }
     }
-
-    return stepsAndSwaps.toTypedArray()
 }
-/*
 
-fun displaySteps(inputArr: Array<Int>, steps: Array<Pair<Array<Int>, Array<Int>>>) {
+
+fun displaySteps(inputArr: Array<Int>, steps: MutableList<Pair<Array<Int>, Array<Int>>>) {
     println("Original Array: ${inputArr.joinToString()}")
     for ((i, step) in steps.withIndex()) {
         val (swappedArr, swappedIndices) = step
@@ -46,12 +46,14 @@ fun main() {
     )
 
     for (inputArr in inputArrays) {
-        val stepsAndSwaps = bubbleSortSequenceGenerator(inputArr)
-        displaySteps(inputArr, stepsAndSwaps)
+        val i = BubbleSortSequenceGenerator()
+        i.sequenceGenerator(inputArr)
+        displaySteps(inputArr, i.result)
         println()
     }
 }
 
+/*
 Test Cases:
 
 Original Array: 5, 6, 7, 1, 1
