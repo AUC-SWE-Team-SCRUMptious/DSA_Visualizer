@@ -10,11 +10,14 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWebException
 
 class Register : AppCompatActivity() {
+    //Activity link to register page
     private lateinit var binding: ActivityRegisterBinding
+    //Firebase authenticator object
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
+        //links view to class
         setContentView(binding.root)
 
         firebaseAuth= FirebaseAuth.getInstance()
@@ -26,32 +29,34 @@ class Register : AppCompatActivity() {
         TODO:Return the code when login is implemented
          */
 
+        //when any click occurs, run this
         binding.registerButton.setOnClickListener{
-            val email = binding.usernameEditText.text.toString()
-            val pass = binding.passwordEditText.text.toString()
+            val email = binding.usernameEditText.text.toString() //grabs the email
+            val pass = binding.passwordEditText.text.toString() //grabs the pass
+            //If both the email and password are inserted do the following
             if(email.isNotEmpty() && pass.isNotEmpty()){
-                val passValidator = PasswordValidator(pass)
-                val mailValidator = EmailValidator(email)
-                if (passValidator.valid && mailValidator.valid)
+                val passValidator = PasswordValidator(pass) //password validator object
+                val mailValidator = EmailValidator(email) //email validator
+                if (passValidator.valid && mailValidator.valid) //if the password and email are valid, do the following
                 {
 
-                        Toast.makeText(this,"This combination is valid",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"This combination is valid",Toast.LENGTH_SHORT).show() //output message
                 }
                 else{
                     if (!passValidator.lengthCheck){
-                        Toast.makeText(this,"Password should be between 6 and 20 characters long", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Password should be between 6 and 20 characters long", Toast.LENGTH_SHORT).show() //output message
                     }
                     if (!passValidator.uppercaseReq){
-                        Toast.makeText(this,"Password should contain at least one uppercase character", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Password should contain at least one uppercase character", Toast.LENGTH_SHORT).show() //output message
                     }
                     if (!passValidator.lowercaseReq){
-                        Toast.makeText(this,"Password should contain at least one lowercase character", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Password should contain at least one lowercase character", Toast.LENGTH_SHORT).show() //output message
                     }
                     if (!passValidator.numReq){
-                        Toast.makeText(this,"Password should contain at least one number", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Password should contain at least one number", Toast.LENGTH_SHORT).show() //output message
                     }
                     if (!mailValidator.valid){
-                        Toast.makeText(this,"Email is invalid", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Email is invalid", Toast.LENGTH_SHORT).show() //output message
                     }
 
                 }
@@ -60,7 +65,7 @@ class Register : AppCompatActivity() {
 
 
             }else{
-                Toast.makeText(this,"Please insert both the email and password before continuing", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please insert both the email and password before continuing", Toast.LENGTH_SHORT).show() //output message
             }
         }
     }

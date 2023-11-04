@@ -15,23 +15,27 @@ class PasswordValidator (var pass: String){
         valid = false
         validatePassword(pass)
     }
-    fun validatePassword(pass: String){
+    //Check if the password matches SRS 1.7.2 format
+    private fun validatePassword(pass: String){
 
-        lengthCheck = pass.length>=6 && pass.length <=20;
+        lengthCheck = pass.length in 6..20;
         if (lengthCheck)
         {
+            //go over every character in a password
             for (item in pass.indices){
-                // == '0' || pass[item] == '1' || pass[item] == '2' || pass[item] == '3' || pass[item] == '4' || pass[item] == '5' || pass[item] == '6' || pass[item] == '7' || pass[item] == '8' || pass[item] == '9'
+                // check if it is a digit and mark the numeric requirement as true if so
                 if (pass[item].isDigit())
                 {
                     numReq = true;
                 }
                 else
                 {
+                    //check if the character is uppercase and mark the uppercase requirement if the character is uppercase and the requirement hasn't been met yet
                     if (pass[item] == pass[item].uppercaseChar() && !uppercaseReq)
                     {
                         uppercaseReq = true;
                     }
+                    //check if the character is lowercase and mark the lowercase requirement if the character is lowercase and the requirement hasn't been met yet
                     if (pass[item] == pass[item].lowercaseChar() && !lowercaseReq)
                     {
                         lowercaseReq = true;
@@ -39,7 +43,7 @@ class PasswordValidator (var pass: String){
                 }
             }
         }
-
+        //mark total validity as true if the prior conditions were met
         if (lengthCheck && uppercaseReq && lowercaseReq && numReq)
             valid = true;
     }

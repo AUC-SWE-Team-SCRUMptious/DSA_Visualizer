@@ -5,6 +5,7 @@ class EmailValidator (private var email: String) {
     init {
         valid = validateEmail(email)
     }
+    //Check if the email is of valid format
     private fun validateEmail(str: String): Boolean{
         return android.util.Patterns.EMAIL_ADDRESS.matcher(str).matches()
     }
