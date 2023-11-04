@@ -6,6 +6,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.scrumptious.algorithmvisualizer.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWebException
 
 class Login : AppCompatActivity() {
     //Activity link to register page
@@ -40,7 +43,17 @@ class Login : AppCompatActivity() {
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show() //output message upon failed login
+                        try {
+                            throw it.exception!!
+                        }
+                        catch(e: FirebaseAuthInvalidCredentialsException) //exception if a user with the same email exists
+                        {
+                            Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_SHORT).show() //output message
+                        }
+                        catch(e: FirebaseAuthWebException) //exception if no internet connection is present
+                        {
+                            Toast.makeText(this, "Check your internet connection", Toast.LENGTH_SHORT).show() //output message
+                        }
 
                     }
                 }
