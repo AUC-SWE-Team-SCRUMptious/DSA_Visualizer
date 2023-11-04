@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "21396974970",
+    "project_id": "algorithm-visualiser-28122",
+    "storage_bucket": "algorithm-visualiser-28122.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21396974970:android:e33ddcb711f6d1b117fac3",
+        "android_client_info": {
+          "package_name": "com.scrumptious.algorithmvisualizer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbX6ZYwKwXcclV4w2NYZQj71w3AFd4rPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
