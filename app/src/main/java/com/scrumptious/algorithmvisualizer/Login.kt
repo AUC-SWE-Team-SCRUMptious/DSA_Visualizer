@@ -35,10 +35,11 @@ class Login : AppCompatActivity() {
                 //attempts login
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        //goes to main activity upon successful login
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show() //output message
+                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show() //output message upon failed login
 
                     }
                 }
