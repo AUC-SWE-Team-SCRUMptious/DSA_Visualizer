@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#000000"> <!-- Set background color to black -->
+
+    <!-- LinearLayout to hold the form elements and center them -->
+    <LinearLayout
+        android:layout_width="384dp"
+        android:layout_height="242dp"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Username Input -->
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:autofillHints="username"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textEmailAddress" />
+
+        <!-- Password Input -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="260dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="12dp"
+            android:autofillHints="password"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="134dp"
+            android:layout_height="60dp"
+            android:background="#FFFFFF"
+            android:text="@string/login" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_prompt" />
+
+    </LinearLayout>
+
+</RelativeLayout>
