@@ -35,6 +35,7 @@ class Login : AppCompatActivity() {
                 //attempts login
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show() //output message
                         //goes to main activity upon successful login
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
@@ -43,7 +44,7 @@ class Login : AppCompatActivity() {
 
                     }
                 }
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show() //output message
+
             } else {
                 Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show() //output message
 
