@@ -39,8 +39,32 @@ class Register : AppCompatActivity() {
                 val mailValidator = EmailValidator(email) //email validator
                 if (passValidator.valid && mailValidator.valid) //if the password and email are valid, do the following
                 {
+                    //sign up function
+                    firebaseAuth.createUserWithEmailAndPassword(email, pass)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show() //output message
+                                /*
+                        val intent = Intent(this,Login::class.java)
+                        startActivity((intent))
+                        TODO: Retrun the code when Login is implemented
+                         */
+                            }
+                            else{
+                                try {
+                                    throw it.exception!!
+                                }
+                                catch(e: FirebaseAuthUserCollisionException) //exception if a user with the same email exists
+                                {
+                                    Toast.makeText(this, "A user with the email currently exists", Toast.LENGTH_SHORT).show() //output message
+                                }
+                                catch(e: FirebaseAuthWebException) //exception if no internet connection is present
+                                {
+                                    Toast.makeText(this, "Check your internet connection", Toast.LENGTH_SHORT).show() //output message
+                                }
 
-                        Toast.makeText(this,"This combination is valid",Toast.LENGTH_SHORT).show() //output message
+                            }
+                        }
                 }
                 else{
                     if (!passValidator.lengthCheck){
