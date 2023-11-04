@@ -1,6 +1,6 @@
 package com.scrumptious.algorithmvisualizer
 
-fun selectionSortWithStepsAndSwaps(arr: Array<Int>): Array<Pair<Array<Int>, Array<Int>>> {
+fun selectionSortSequenceGenerator(arr: Array<Int>): Array<Pair<Array<Int>, Array<Int>>> {
     val steps = mutableListOf(arr.copyOf()) // Initialize the steps array with the initial state
     val result = mutableListOf<Pair<Array<Int>, Array<Int>>>() // Initialize the result list
 
