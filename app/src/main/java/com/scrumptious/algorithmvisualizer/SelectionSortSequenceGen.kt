@@ -2,12 +2,14 @@ package com.scrumptious.algorithmvisualizer
 
 
 class SelectionSortSequenceGen {
-fun selectionSortSequenceGenerator(arr: Array<Int>): Array<Pair<Array<Int>, Array<Int>>> {
+
+    var result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+
+fun selectionSortSequenceGenerator(arr: Array<Int>): Unit {
     val steps = mutableListOf(arr.copyOf()) // Initialize the steps array with the initial state
-    val result = mutableListOf<Pair<Array<Int>, Array<Int>>>() // Initialize the result list
 
     if (arr.isEmpty()) {
-        return result.toTypedArray() // Return an empty result for an empty input array
+        return
     }
 
     for (i in 0 until arr.size - 1) {
@@ -32,11 +34,10 @@ fun selectionSortSequenceGenerator(arr: Array<Int>): Array<Pair<Array<Int>, Arra
         steps.add(arr.copyOf()) // Store the current state in the steps array
         result.add(Pair(steps.last().copyOf(), swaps.toTypedArray()))
     }
-
-    return result.toTypedArray()
+    return
+}
 }
 
-}
 /*
 //main fun to test the algorithm
 fun main() {
@@ -49,11 +50,12 @@ fun main() {
     val inputArray6 = arrayOf(7, 6, 5, 4, 3, 2, 1)
     val inputArray7 = arrayOf(1)
     val inputArray8 = emptyArray<Int>()
-
+    val i = SelectionSortSequenceGen()
     val arrays = listOf(inputArray1, inputArray2, inputArray3, inputArray4, inputArray5, inputArray6, inputArray7, inputArray8)
 
     for ((index, inputArray) in arrays.withIndex()) {
-        val results = selectionSortSequenceGenerator(inputArray.copyOf())
+        i.selectionSortSequenceGenerator(inputArray.copyOf())
+        val results = i.result
 
         println("Original Array ${index + 1}: ${inputArray.joinToString(", ")}")
         for ((stepIndex, pair) in results.withIndex()) {
@@ -62,10 +64,12 @@ fun main() {
             println("Step ${stepIndex + 1}: ${step.joinToString(", ")} - $swapText")
         }
 
+        i.result.clear() // Clear the results for the next iteration
 
         println()
     }
 }
+
 //Correct Output:
 * Original Array 1: 64, 25, 12, 22, 11
 Step 1: 11, 25, 12, 22, 64 - Swapped indices: 0, 4
