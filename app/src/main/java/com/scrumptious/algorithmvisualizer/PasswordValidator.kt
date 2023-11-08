@@ -2,11 +2,11 @@ package com.scrumptious.algorithmvisualizer
 
 class PasswordValidator (var pass: String){
 
-    var lengthCheck: Boolean
-    var uppercaseReq: Boolean
-    var lowercaseReq: Boolean
-    var numReq: Boolean
-    var valid: Boolean
+    private var lengthCheck: Boolean
+    private var uppercaseReq: Boolean
+    private var lowercaseReq: Boolean
+    private var numReq: Boolean
+    private var valid: Boolean
     init {
         lengthCheck = false
         uppercaseReq = false
@@ -46,5 +46,21 @@ class PasswordValidator (var pass: String){
         //mark total validity as true if the prior conditions were met
         if (lengthCheck && uppercaseReq && lowercaseReq && numReq)
             valid = true;
+    }
+
+    public fun getLengthCheck(): Boolean{
+        return lengthCheck
+    }
+    public fun getUppercaseReq(): Boolean{
+        return uppercaseReq
+    }
+    public fun getLowercaseReq(): Boolean{
+        return lowercaseReq
+    }
+    public fun getNumReq(): Boolean{
+        return numReq
+    }
+    public fun getValid(): Boolean{
+        return valid
     }
 }
