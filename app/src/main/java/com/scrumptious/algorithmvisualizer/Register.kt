@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.scrumptious.algorithmvisualizer.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWebException
 
@@ -57,6 +58,9 @@ class Register : AppCompatActivity() {
                                 catch(e: FirebaseAuthWebException) //exception if no internet connection is present
                                 {
                                     Toast.makeText(this, "Check your internet connection", Toast.LENGTH_SHORT).show() //output message
+                                }
+                                catch (e: FirebaseAuthInvalidCredentialsException){
+                                    Toast.makeText(this, "Email is invalid", Toast.LENGTH_SHORT).show() //output message
                                 }
 
                             }
