@@ -34,9 +34,9 @@ class Register : AppCompatActivity() {
             val pass = binding.passwordEditText.text.toString() //grabs the pass
             //If both the email and password are inserted do the following
             if(email.isNotEmpty() && pass.isNotEmpty()){
-                val passValidator = PasswordValidator(pass) //password validator object
-                val mailValidator = EmailValidator(email) //email validator
-                if (passValidator.getValid() && mailValidator.getValid()) //if the password and email are valid, do the following
+                val passValidator = PasswordValidator() //password validator object
+                val mailValidator = EmailValidator() //email validator
+                if (passValidator.validate(this, pass) && mailValidator.validate(this, email)) //if the password and email are valid, do the following
                 {
                     //sign up function
                     firebaseAuth.createUserWithEmailAndPassword(email, pass)
@@ -61,30 +61,12 @@ class Register : AppCompatActivity() {
                                 }
                                 catch (e: FirebaseAuthInvalidCredentialsException){
                                     Toast.makeText(this, "Email is invalid", Toast.LENGTH_SHORT).show() //output message
-                                }
+                                } //exception in case our email validator validates an invalid email address
 
                             }
                         }
                 }
-                else{
-                    if (!mailValidator.getValid()){
-                        Toast.makeText(this,"Email is invalid", Toast.LENGTH_SHORT).show() //output message
-                    }
-                    if (!passValidator.getLengthCheck()){
-                        Toast.makeText(this,"Password should be between 6 and 20 characters long", Toast.LENGTH_SHORT).show() //output message
-                    }
-                    if (!passValidator.getUppercaseReq()){
-                        Toast.makeText(this,"Password should contain at least one uppercase character", Toast.LENGTH_SHORT).show() //output message
-                    }
-                    if (!passValidator.getLowercaseReq()){
-                        Toast.makeText(this,"Password should contain at least one lowercase character", Toast.LENGTH_SHORT).show() //output message
-                    }
-                    if (!passValidator.getNumReq()){
-                        Toast.makeText(this,"Password should contain at least one number", Toast.LENGTH_SHORT).show() //output message
-                    }
 
-
-                }
 
 
 

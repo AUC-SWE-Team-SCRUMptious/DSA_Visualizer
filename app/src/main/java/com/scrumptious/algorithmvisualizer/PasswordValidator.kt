@@ -1,23 +1,17 @@
 package com.scrumptious.algorithmvisualizer
 
-class PasswordValidator (var pass: String){
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
-    private var lengthCheck: Boolean
-    private var uppercaseReq: Boolean
-    private var lowercaseReq: Boolean
-    private var numReq: Boolean
-    private var valid: Boolean
-    init {
-        lengthCheck = false
-        uppercaseReq = false
-        lowercaseReq = false
-        numReq = false
-        valid = false
-        validatePassword(pass)
-    }
-    //Check if the password matches SRS 1.7.2 format
-    private fun validatePassword(pass: String){
+class PasswordValidator : UserInfoValidator{
 
+
+    override fun validate(page: AppCompatActivity, pass: String): Boolean {
+        var lengthCheck = false
+        var uppercaseReq = false
+        var lowercaseReq = false
+        var numReq = false
+        var valid = false
         lengthCheck = pass.length in 6..20;
         if (lengthCheck)
         {
@@ -43,24 +37,18 @@ class PasswordValidator (var pass: String){
                 }
             }
         }
-        //mark total validity as true if the prior conditions were met
-        if (lengthCheck && uppercaseReq && lowercaseReq && numReq)
-            valid = true;
-    }
-
-    public fun getLengthCheck(): Boolean{
-        return lengthCheck
-    }
-    public fun getUppercaseReq(): Boolean{
-        return uppercaseReq
-    }
-    public fun getLowercaseReq(): Boolean{
-        return lowercaseReq
-    }
-    public fun getNumReq(): Boolean{
-        return numReq
-    }
-    public fun getValid(): Boolean{
-        return valid
+        if (!lengthCheck){
+            Toast.makeText(page,"Password should be between 6 and 20 characters long", Toast.LENGTH_SHORT).show() //output message
+        }
+        if (!uppercaseReq){
+            Toast.makeText(page,"Password should contain at least one uppercase character", Toast.LENGTH_SHORT).show() //output message
+        }
+        if (!lowercaseReq){
+            Toast.makeText(page,"Password should contain at least one lowercase character", Toast.LENGTH_SHORT).show() //output message
+        }
+        if (!numReq){
+            Toast.makeText(page,"Password should contain at least one number", Toast.LENGTH_SHORT).show() //output message
+        }
+        return lengthCheck && uppercaseReq && lowercaseReq && numReq;
     }
 }
