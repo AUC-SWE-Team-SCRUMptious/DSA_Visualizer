@@ -4,17 +4,21 @@ package com.scrumptious.algorithmvisualizer
 import java.lang.NumberFormatException
 // Does not accept " 1,2,,3"
 class DataValidator {
-    var DataStatus: String = ""
-    var ValidData = mutableListOf<Int>()
+    var dataStatus: String = ""
+    var validData = mutableListOf<Int>()
     fun validate( userInput: String){
+        if(userInput == ""){
+            dataStatus = "Null input"
+            return
+        }
         val myInts = userInput.split(",")
-        var currentData = mutableListOf<Int>()
+        val currentData = mutableListOf<Int>()
         var sorted = true
-        for(i in 0 until myInts.size){
+        for(i in myInts.indices){
             try {
                 val num = myInts[i].trim().toLong() // will fail if input is not an integer
                 if(num < -2147483648 || num > 2147483647){
-                    DataStatus = "Input is out of range"
+                    dataStatus = "Input is out of range"
                     return
                 }
                 if(i != 0 && num.toInt() < currentData[i-1]){
@@ -23,17 +27,17 @@ class DataValidator {
                 currentData.add(num.toInt())
             }
             catch (e: NumberFormatException){
-                DataStatus = "Input includes a non number"
+                dataStatus = "Input includes a non number"
                 return
             }
         }
         if(currentData.size >20){
-            DataStatus = "Input has more than 20 elements"
+            dataStatus = "Input has more than 20 elements"
             return
         }
         val message = if (sorted) "sorted" else "not sorted" // Only sorted if ascending
-        DataStatus = "Input is valid and $message"
-        ValidData = currentData
+        dataStatus = "Input is valid and $message"
+        validData = currentData
 
 	}
 }
@@ -52,7 +56,7 @@ Input                           Expected Output                     Output
 "1,a,2"                         Input includes a non number         Input includes a non number
 "1,a2,3"                        Input includes a non number         Input includes a non number
 "1,,2,3"                        Input includes a non number         Input includes a non number
-""                              Input includes a non number         Input includes a non number
+""                              Null input		            Null input
 "apples"                        Input includes a non number         Input includes a non number
 "1,2,3,4,5,6,7,8,9,10,11,
 12,13,14,15,16,17,18,19,20"     Input is valid and sorted           Input is valid and sorted
