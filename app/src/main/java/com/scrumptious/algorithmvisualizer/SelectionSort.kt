@@ -3,7 +3,7 @@ package com.scrumptious.algorithmvisualizer
 
 class SelectionSort : SequenceStrategy {
 
-    override fun BuildSequence(myData: Array<Int>): MutableList<Pair<Array<Int>, Array<Int>>> {
+    override fun buildSequence(myData: Array<Int>): MutableList<Pair<Array<Int>, Array<Int>>> {
         val result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
         val steps = mutableListOf(myData.copyOf()) // Initialize the steps array with the initial state
 

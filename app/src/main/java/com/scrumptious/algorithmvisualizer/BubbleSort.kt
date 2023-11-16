@@ -2,7 +2,7 @@ package com.scrumptious.algorithmvisualizer
 
 class BubbleSort : SequenceStrategy{
 
-    override fun BuildSequence(myData: Array<Int>) : MutableList<Pair<Array<Int>, Array<Int>>>{
+    override fun buildSequence(myData: Array<Int>) : MutableList<Pair<Array<Int>, Array<Int>>>{
         val result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
         val n = myData.size
         val sortArr = myData.copyOf()
