@@ -1,11 +1,11 @@
 package com.scrumptious.algorithmvisualizer
 
-class BubbleSortSequenceGenerator{
-    var result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+class BubbleSort : SequenceStrategy{
 
-    fun sequenceGenerator(inputArr: Array<Int>){
-        val n = inputArr.size
-        val sortArr = inputArr.copyOf()
+    override fun BuildSequence(myData: Array<Int>) : MutableList<Pair<Array<Int>, Array<Int>>>{
+        val result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+        val n = myData.size
+        val sortArr = myData.copyOf()
 
         for (i in 0 until n - 1) {
             var swapped = false
@@ -23,6 +23,7 @@ class BubbleSortSequenceGenerator{
                 break
             }
         }
+        return result
     }
 }
 
