@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+<style name="algorithm_v">
+<item name="android:textSize">43sp</item>
+<item name="android:textColor">#68607C</item>
+<!-- Add font family if needed -->
+</style>
+
+    <style name="your_algorithm">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="email_address">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#5a5a5a</item>
+    </style>
+
+    <style name="sign_up">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+
+    </style>
+
+    <style name="already_have">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+
+    <style name="sign_in">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#082EB3</item>
+    </style>
+
+    <style name="don_t_have">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="select_algo">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+</resources>

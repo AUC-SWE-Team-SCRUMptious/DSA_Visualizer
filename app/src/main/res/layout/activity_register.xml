@@ -1,57 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#000000"> <!-- Set background color to black -->
+    android:layout_height="match_parent">
 
-    <!-- LinearLayout to hold the form elements and center them -->
-    <LinearLayout
+    <View
+        android:id="@+id/rectangle_6_1"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BBEEF4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/algorithm_v"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/algorithm_v"
+        android:textAppearance="@style/algorithm_v"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/untitled_de"
+        android:layout_width="109dp"
+        android:layout_height="110dp"
+        android:background="@drawable/untitled_de"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122" />
+
+    <TextView
+        android:id="@+id/email_address"
+        android:layout_width="292dp"
+        android:layout_height="30dp"
         android:layout_centerInParent="true"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_marginTop="50dp"
+        android:background="#ECECEC"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:paddingStart="16dp"
+        android:text="@string/email_address"
+        android:textAppearance="@style/email_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/algorithm_v" />
 
-        <!-- Username Input -->
-        <EditText
-            android:id="@+id/usernameEditText"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="12dp"
-            android:autofillHints="username"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:hint="@string/username"
-            android:inputType="textEmailAddress" />
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="292dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="#ECECEC"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:paddingStart="16dp"
+        android:text="@string/username"
+        android:textAppearance="@style/email_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_address" />
 
-        <!-- Password Input -->
-        <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="12dp"
-            android:autofillHints="password"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword" />
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="292dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="#ECECEC"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:paddingStart="16dp"
+        android:text="@string/password"
+        android:textAppearance="@style/email_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
+    <TextView
+        android:id="@+id/confirm_password"
+        android:layout_width="292dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="#ECECEC"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:paddingStart="16dp"
+        android:text="@string/confirm_password"
+        android:textAppearance="@style/email_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
-        <!-- Login Button -->
-        <Button
-            android:id="@+id/registerButton"
-            android:layout_width="134dp"
-            android:layout_height="60dp"
-            android:background="#FFFFFF"
-            android:text="@string/register" />
+    <Button
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/sign_up"
+        android:textAppearance="@style/sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_password" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/log_in_prompt" />
+    <TextView
+        android:id="@+id/already_have"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="148dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/already_have"
+        android:textAppearance="@style/already_have"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/sign_in"
+        android:textAppearance="@style/sign_in"
+        app:layout_constraintStart_toEndOf="@+id/already_have"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
