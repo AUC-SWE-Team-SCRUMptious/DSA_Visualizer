@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.AlgorithmVisualizer" parent="Base.Theme.AlgorithmVisualizer" />
+
+    <resources>
+        <style name="Theme.Bar" parent="Theme.AppCompat.Light.DarkActionBar" />
+    </resources>
+
 </resources>
