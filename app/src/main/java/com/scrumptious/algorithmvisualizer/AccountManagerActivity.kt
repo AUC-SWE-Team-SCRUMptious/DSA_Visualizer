@@ -14,8 +14,7 @@ import com.google.firebase.ktx.Firebase
 class AccountManagerActivity: AppCompatActivity() {
     //Activity link to account manager page
     private lateinit var binding: ActivityAccountManagerBinding
-    //Firebase authenticator object
-    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAccountManagerBinding.inflate(layoutInflater)
@@ -37,6 +36,7 @@ class AccountManagerActivity: AppCompatActivity() {
             startActivity(intent)
         }
         //sign out
+        //TODO add cases for when the user is null
         binding.signOut.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -44,6 +44,10 @@ class AccountManagerActivity: AppCompatActivity() {
             {
                 Firebase.auth.signOut()
 
+            }
+            else
+            {
+                Toast.makeText(this, "You shouldn't even be here" , Toast.LENGTH_SHORT).show() //output message
             }
         }
 

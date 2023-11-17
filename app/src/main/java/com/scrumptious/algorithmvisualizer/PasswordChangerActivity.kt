@@ -40,7 +40,7 @@ class PasswordChangerActivity: AppCompatActivity() {
             val newPassword = binding.newPasswordEditText.text.toString()
             val user = FirebaseAuth.getInstance().currentUser;
             // Get auth credentials from the user for re-authentication
-            var credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
+            val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
 
             // Prompt the user to re-provide their sign-in credentials
             // Prompt the user to re-provide their sign-in credentials
@@ -50,7 +50,6 @@ class PasswordChangerActivity: AppCompatActivity() {
                     user?.reauthenticate(credential)?.addOnCompleteListener {
                         if (it.isSuccessful){
                             //changes the password
-                            //TODO make the user have to verify password change by email
                             user.updatePassword(newPassword).addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     Toast.makeText(
@@ -58,7 +57,7 @@ class PasswordChangerActivity: AppCompatActivity() {
                                         "Password Changed",
                                         Toast.LENGTH_LONG
                                     ).show()
-                                    val intent = Intent(this,LoginActivity::class.java)
+                                    val intent = Intent(this,AccountManagerActivity::class.java)
                                     startActivity((intent))
                                 }
                                 else{
@@ -71,9 +70,10 @@ class PasswordChangerActivity: AppCompatActivity() {
 
                         }
                         else{
-                            Toast.makeText(this, "Failed to change password" , Toast.LENGTH_SHORT).show() //output message
+                            Toast.makeText(this, "Incorrect email or password" , Toast.LENGTH_SHORT).show() //output message
                         }
                     }
+
 
 
                 }

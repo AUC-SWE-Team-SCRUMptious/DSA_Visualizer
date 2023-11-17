@@ -15,35 +15,32 @@ class EmailChangerActivity: AppCompatActivity() {
     private lateinit var binding: ActivityEmailChangerBinding
     //Firebase authenticator object
     private lateinit var firebaseAuth: FirebaseAuth
-    var user = FirebaseAuth.getInstance().currentUser
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //TODO add this line back in and change accordingly
+
         binding = ActivityEmailChangerBinding.inflate(layoutInflater)
         //links view to class
         setContentView(binding.root)
 
 
         firebaseAuth = FirebaseAuth.getInstance()
-        //when click on the text occurs, run this
-        //TODO add this line back in and change accordingly
 
 
 
 
-        //when click on the login button occurs, run this
-        //TODO add this line back in and change accordingly
 
-        //change the email
+
+
+        //change the email on button click
         binding.button.setOnClickListener {
             val email = binding.usernameEditText.text.toString()
             val pass = binding.passwordEditText.text.toString()
             val newEmail = binding.newEmailEditText.text.toString()
             val user = FirebaseAuth.getInstance().currentUser;
             // Get auth credentials from the user for re-authentication
-            var credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
+            val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
 
             // Prompt the user to re-provide their sign-in credentials
             // Prompt the user to re-provide their sign-in credentials
@@ -52,27 +49,19 @@ class EmailChangerActivity: AppCompatActivity() {
                 {
                     user?.reauthenticate(credential)?.addOnCompleteListener {
                         if (it.isSuccessful){
-                            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                                if (it.isSuccessful) {
-                                    //tells the user to check the new email to change it
-                                    user.verifyBeforeUpdateEmail(newEmail).addOnCompleteListener { task ->
-                                        if (task.isSuccessful) {
-                                            Toast.makeText(
-                                                this,
-                                                "Check your email for change confirmation",
-                                                Toast.LENGTH_LONG
-                                            ).show()
-                                            val intent = Intent(this,LoginActivity::class.java)
-                                            startActivity((intent))
-                                        }
-                                        else{
-                                            val mess = task.exception?.message
-                                            Toast.makeText(this, mess , Toast.LENGTH_SHORT).show() //output message
-
-                                        }
-                                    }
-                                } else {
-                                    Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_SHORT).show() //output message
+                            user.verifyBeforeUpdateEmail(newEmail).addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    Toast.makeText(
+                                        this,
+                                        "Check your email for change confirmation",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                    val intent = Intent(this,AccountManagerActivity::class.java)
+                                    startActivity((intent))
+                                }
+                                else{
+                                    val mess = task.exception?.message
+                                    Toast.makeText(this, mess , Toast.LENGTH_SHORT).show() //output message
 
                                 }
                             }
@@ -80,7 +69,7 @@ class EmailChangerActivity: AppCompatActivity() {
 
                         }
                         else{
-                            Toast.makeText(this, "Failed to change email" , Toast.LENGTH_SHORT).show() //output message
+                            Toast.makeText(this, "Incorrect email or password" , Toast.LENGTH_SHORT).show() //output message
                         }
                     }
 
