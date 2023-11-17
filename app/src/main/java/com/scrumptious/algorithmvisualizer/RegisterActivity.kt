@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWebException
 
-class Register : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     //Activity link to register page
     private lateinit var binding: ActivityRegisterBinding
     //Firebase authenticator object
@@ -24,7 +24,7 @@ class Register : AppCompatActivity() {
         //on click, go to login
         firebaseAuth= FirebaseAuth.getInstance()
         binding.textView2.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
@@ -44,7 +44,7 @@ class Register : AppCompatActivity() {
                             if (it.isSuccessful) {
                                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show() //output message
                         //go to the login page
-                        val intent = Intent(this,Login::class.java)
+                        val intent = Intent(this,LoginActivity::class.java)
                         startActivity((intent))
                             }
                             else{

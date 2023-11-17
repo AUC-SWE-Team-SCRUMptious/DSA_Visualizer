@@ -8,7 +8,7 @@ import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.scrumptious.algorithmvisualizer.databinding.ActivityPasswordChangerBinding
 
-class PasswordChanger: AppCompatActivity() {
+class PasswordChangerActivity: AppCompatActivity() {
     //Activity link to register page
     //TODO change the binding to the UI
     private lateinit var binding: ActivityPasswordChangerBinding
@@ -58,7 +58,7 @@ class PasswordChanger: AppCompatActivity() {
                                         "Password Changed",
                                         Toast.LENGTH_LONG
                                     ).show()
-                                    val intent = Intent(this,Login::class.java)
+                                    val intent = Intent(this,LoginActivity::class.java)
                                     startActivity((intent))
                                 }
                                 else{

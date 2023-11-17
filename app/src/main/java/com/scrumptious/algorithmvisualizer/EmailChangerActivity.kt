@@ -2,19 +2,14 @@ package com.scrumptious.algorithmvisualizer
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWebException
 import com.scrumptious.algorithmvisualizer.databinding.ActivityEmailChangerBinding
 
 
-class EmailChanger: AppCompatActivity() {
+class EmailChangerActivity: AppCompatActivity() {
     //Activity link to register page
     //TODO change the binding to the UI
     private lateinit var binding: ActivityEmailChangerBinding
@@ -59,14 +54,14 @@ class EmailChanger: AppCompatActivity() {
                         if (it.isSuccessful){
                             firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                                 if (it.isSuccessful) {
-                                    user.updateEmail(newEmail).addOnCompleteListener { task ->
+                                    user!!.updateEmail(newEmail).addOnCompleteListener { task ->
                                         if (task.isSuccessful) {
                                             Toast.makeText(
                                                 this,
                                                 "Email Changed" + " Current Email is " + newEmail,
                                                 Toast.LENGTH_LONG
                                             ).show()
-                                            val intent = Intent(this,Login::class.java)
+                                            val intent = Intent(this,LoginActivity::class.java)
                                             startActivity((intent))
                                         }
                                         else{
