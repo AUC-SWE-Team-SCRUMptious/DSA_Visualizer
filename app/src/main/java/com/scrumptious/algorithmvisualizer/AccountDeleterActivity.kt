@@ -50,6 +50,8 @@ class AccountDeleterActivity: AppCompatActivity() {
                             user.delete()
                             val intent = Intent(this,LoginActivity::class.java)
                             startActivity((intent))
+                            Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT)
+                                .show() //output message
                                 }
                         else {
                             Toast.makeText(this, "Failed to delete account", Toast.LENGTH_SHORT)
