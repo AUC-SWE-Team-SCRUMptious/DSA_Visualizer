@@ -27,6 +27,12 @@ class AccountDeleterActivity: AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        //go back to account manager
+        binding.back.setOnClickListener{
+            val intent = Intent(this,AccountManagerActivity::class.java)
+            startActivity((intent))
+        }
+
 
         //delete the account
         binding.button.setOnClickListener {
