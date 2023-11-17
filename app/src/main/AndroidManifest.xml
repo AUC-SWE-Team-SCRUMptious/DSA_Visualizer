@@ -34,6 +34,14 @@
             android:name=".Login"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".EmailChanger"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".PasswordChanger"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
     </application>
 
 </manifest>
