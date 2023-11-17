@@ -9,8 +9,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.scrumptious.algorithmvisualizer.databinding.ActivityPasswordChangerBinding
 
 class PasswordChangerActivity: AppCompatActivity() {
-    //Activity link to register page
-    //TODO change the binding to the UI
+    //Activity link to password changer
+
     private lateinit var binding: ActivityPasswordChangerBinding
     //Firebase authenticator object
     private lateinit var firebaseAuth: FirebaseAuth
@@ -19,23 +19,21 @@ class PasswordChangerActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //TODO add this line back in and change accordingly
+
         binding = ActivityPasswordChangerBinding.inflate(layoutInflater)
         //links view to class
         setContentView(binding.root)
 
 
         firebaseAuth = FirebaseAuth.getInstance()
-        //when click on the text occurs, run this
-        //TODO add this line back in and change accordingly
 
 
 
 
-        //when click on the login button occurs, run this
-        //TODO add this line back in and change accordingly
 
-        //change the email
+
+
+        //change the password
         binding.button.setOnClickListener {
             val email = binding.usernameEditText.text.toString()
             val pass = binding.passwordEditText.text.toString()
@@ -51,7 +49,9 @@ class PasswordChangerActivity: AppCompatActivity() {
                 {
                     user?.reauthenticate(credential)?.addOnCompleteListener {
                         if (it.isSuccessful){
-                            user.updateEmail(newPassword).addOnCompleteListener { task ->
+                            //changes the password
+                            //TODO make the user have to verify password change by email
+                            user.updatePassword(newPassword).addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     Toast.makeText(
                                         this,

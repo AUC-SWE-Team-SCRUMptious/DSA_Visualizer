@@ -12,7 +12,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class AccountManagerActivity: AppCompatActivity() {
-    //Activity link to register page
+    //Activity link to account manager page
     private lateinit var binding: ActivityAccountManagerBinding
     //Firebase authenticator object
     private lateinit var firebaseAuth: FirebaseAuth
@@ -21,15 +21,22 @@ class AccountManagerActivity: AppCompatActivity() {
         binding = ActivityAccountManagerBinding.inflate(layoutInflater)
         //links view to class
         setContentView(binding.root)
-
+        //goes to email changing (actually broken)
         binding.changeEmail.setOnClickListener {
             val intent = Intent(this, EmailChangerActivity::class.java)
             startActivity(intent)
         }
+        //goes to password changing
         binding.changePassword.setOnClickListener {
             val intent = Intent(this, PasswordChangerActivity::class.java)
             startActivity(intent)
         }
+        //goes to account deletion
+        binding.accountDelete.setOnClickListener {
+            val intent = Intent(this, AccountDeleterActivity::class.java)
+            startActivity(intent)
+        }
+        //sign out
         binding.signOut.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

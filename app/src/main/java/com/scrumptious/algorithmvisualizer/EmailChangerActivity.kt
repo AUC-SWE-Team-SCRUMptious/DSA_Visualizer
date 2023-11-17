@@ -54,11 +54,12 @@ class EmailChangerActivity: AppCompatActivity() {
                         if (it.isSuccessful){
                             firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                                 if (it.isSuccessful) {
-                                    user!!.updateEmail(newEmail).addOnCompleteListener { task ->
+                                    //tells the user to check the new email to change it
+                                    user.verifyBeforeUpdateEmail(newEmail).addOnCompleteListener { task ->
                                         if (task.isSuccessful) {
                                             Toast.makeText(
                                                 this,
-                                                "Email Changed" + " Current Email is " + newEmail,
+                                                "Check your email for change confirmation",
                                                 Toast.LENGTH_LONG
                                             ).show()
                                             val intent = Intent(this,LoginActivity::class.java)
