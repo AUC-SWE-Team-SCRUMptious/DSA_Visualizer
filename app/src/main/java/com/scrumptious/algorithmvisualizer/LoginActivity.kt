@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         binding.textView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-            this.finish()
+            //this.finish()
         }
         //when click on the login button occurs, run this
         binding.loginButton.setOnClickListener {

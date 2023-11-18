@@ -47,7 +47,7 @@ class RegisterActivity : AppCompatActivity() {
                                 //go to the login page
                                 val intent = Intent(this,LoginActivity::class.java)
                                 startActivity((intent))
-                                this.finish()
+                                //this.finish()
                             }
                             else{
                                 try {
