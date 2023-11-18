@@ -15,7 +15,7 @@
 
         <!-- Username Input -->
         <EditText
-            android:id="@+id/usernameEditText"
+            android:id="@+id/emailEditText"
             android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_marginBottom="12dp"
