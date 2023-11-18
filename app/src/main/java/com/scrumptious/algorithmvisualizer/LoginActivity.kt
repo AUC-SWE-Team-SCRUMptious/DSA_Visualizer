@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         //when click on the text occurs, run this
-        binding.textView.setOnClickListener {
+        binding.signUp.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             this.finish()

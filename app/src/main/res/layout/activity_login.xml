@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="292dp"
         android:layout_height="30dp"
@@ -48,14 +48,14 @@
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:text="username"
+        android:hint="Email"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/untitled_de" />
 
-    <TextView
+    <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="292dp"
         android:layout_height="30dp"
@@ -65,7 +65,7 @@
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:text="@string/password"
+        android:hint="@string/password"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -93,7 +93,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="80dp"
         android:gravity="center_horizontal|top"
-        android:text="sign_up"
+        android:text="Sign up"
         android:textAppearance="@style/sign_in"
         app:layout_constraintStart_toEndOf="@+id/don_t_have_"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />

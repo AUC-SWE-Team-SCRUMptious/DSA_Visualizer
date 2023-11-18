@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.122" />
 
-    <TextView
+    <EditText
         android:id="@+id/enailEditText"
         android:layout_width="292dp"
         android:layout_height="30dp"
@@ -49,14 +49,15 @@
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:text="@string/email_address"
+        android:hint="@string/email_address"
+        android:inputType="text"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/algorithm_v" />
 
-    <TextView
+    <EditText
         android:id="@+id/username"
         android:layout_width="292dp"
         android:layout_height="30dp"
@@ -66,14 +67,14 @@
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:text="@string/username"
+        android:hint="@string/username"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enailEditText" />
 
-    <TextView
+    <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="292dp"
         android:layout_height="30dp"
@@ -83,14 +84,15 @@
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:text="@string/password"
+        android:inputType="text"
+        android:hint="@string/password"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
-    <TextView
+    <EditText
         android:id="@+id/confirm_password"
         android:layout_width="292dp"
         android:layout_height="30dp"
@@ -100,7 +102,7 @@
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:text="@string/confirm_password"
+        android:hint="@string/confirm_password"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -136,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
 
-    <Button
+    <TextView
         android:id="@+id/sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,9 +151,3 @@
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</LinearLayout>
-
-</RelativeLayout>
-

@@ -23,7 +23,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //on click, go to login
         firebaseAuth= FirebaseAuth.getInstance()
-        binding.textView2.setOnClickListener {
+        binding.signIn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             this.finish()
@@ -31,7 +31,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //when any click occurs, run this
         binding.registerButton.setOnClickListener{
-            val email = binding.emailEditText.text.toString() //grabs the email
+            val email = binding.enailEditText.text.toString() //grabs the email
             val pass = binding.passwordEditText.text.toString() //grabs the pass
             //If both the email and password are inserted do the following
             if(email.isNotEmpty() && pass.isNotEmpty()){
