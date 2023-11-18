@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
         binding.textView.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            this.finish()
         }
         //when click on the login button occurs, run this
         binding.loginButton.setOnClickListener {
@@ -39,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
                         //goes to main activity upon successful login
                         val intent = Intent(this, AccountManagerActivity::class.java)
                         startActivity(intent)
+                        this.finish()
                     } else {
                         Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_SHORT).show() //output message
 

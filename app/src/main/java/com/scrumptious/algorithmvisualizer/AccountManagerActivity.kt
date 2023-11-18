@@ -24,16 +24,19 @@ class AccountManagerActivity: AppCompatActivity() {
         binding.changeEmail.setOnClickListener {
             val intent = Intent(this, EmailChangerActivity::class.java)
             startActivity(intent)
+
         }
         //goes to password changing
         binding.changePassword.setOnClickListener {
             val intent = Intent(this, PasswordChangerActivity::class.java)
             startActivity(intent)
+
         }
         //goes to account deletion
         binding.accountDelete.setOnClickListener {
             val intent = Intent(this, AccountDeleterActivity::class.java)
             startActivity(intent)
+
         }
         //sign out
         //TODO add cases for when the user is null
@@ -43,6 +46,7 @@ class AccountManagerActivity: AppCompatActivity() {
             if (FirebaseAuth.getInstance().currentUser != null)
             {
                 Firebase.auth.signOut()
+                this.finish()
 
             }
             else

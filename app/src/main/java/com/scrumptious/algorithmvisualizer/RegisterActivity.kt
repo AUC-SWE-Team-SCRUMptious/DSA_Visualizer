@@ -26,6 +26,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.textView2.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            this.finish()
         }
 
         //when any click occurs, run this
@@ -43,9 +44,10 @@ class RegisterActivity : AppCompatActivity() {
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show() //output message
-                        //go to the login page
-                        val intent = Intent(this,LoginActivity::class.java)
-                        startActivity((intent))
+                                //go to the login page
+                                val intent = Intent(this,LoginActivity::class.java)
+                                startActivity((intent))
+                                this.finish()
                             }
                             else{
                                 try {

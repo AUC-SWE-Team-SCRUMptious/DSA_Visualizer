@@ -29,8 +29,8 @@ class AccountDeleterActivity: AppCompatActivity() {
 
         //go back to account manager
         binding.back.setOnClickListener{
-            val intent = Intent(this,AccountManagerActivity::class.java)
-            startActivity((intent))
+
+            this.finish()
         }
 
 
@@ -43,12 +43,12 @@ class AccountDeleterActivity: AppCompatActivity() {
             //user object
             val user = FirebaseAuth.getInstance().currentUser;
             // Get auth credentials from the user for re-authentication
-            var credential =
-                EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
+
 
             // Prompt the user to re-provide their sign-in credentials
             // Prompt the user to re-provide their sign-in credentials
             if (email.isNotEmpty() && pass.isNotEmpty()) {
+                    val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
                     //reauthenticates the user
                     user?.reauthenticate(credential)?.addOnCompleteListener {
                         if (it.isSuccessful) {
@@ -56,9 +56,12 @@ class AccountDeleterActivity: AppCompatActivity() {
                             user.delete()
                             val intent = Intent(this,LoginActivity::class.java)
                             startActivity((intent))
+
                             Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT)
                                 .show() //output message
-                                }
+                            this.finish()
+                        }
+
                         else {
                             Toast.makeText(this, "Failed to delete account", Toast.LENGTH_SHORT)
                                 .show() //output message

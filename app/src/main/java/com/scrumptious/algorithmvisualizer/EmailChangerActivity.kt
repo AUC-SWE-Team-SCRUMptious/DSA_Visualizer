@@ -32,8 +32,7 @@ class EmailChangerActivity: AppCompatActivity() {
 
         //go back to account manager
         binding.back.setOnClickListener{
-            val intent = Intent(this,AccountManagerActivity::class.java)
-            startActivity((intent))
+            this.finish()
         }
 
 
@@ -44,11 +43,12 @@ class EmailChangerActivity: AppCompatActivity() {
             val newEmail = binding.newEmailEditText.text.toString()
             val user = FirebaseAuth.getInstance().currentUser;
             // Get auth credentials from the user for re-authentication
-            val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
+
 
             // Prompt the user to re-provide their sign-in credentials
             // Prompt the user to re-provide their sign-in credentials
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
+            if (email.isNotEmpty() && pass.isNotEmpty() && newEmail.isNotEmpty()) {
+                val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
                 if (EmailValidator().validate(this,newEmail))
                 {
                     user?.reauthenticate(credential)?.addOnCompleteListener {
@@ -62,6 +62,7 @@ class EmailChangerActivity: AppCompatActivity() {
                                     ).show()
                                     val intent = Intent(this,AccountManagerActivity::class.java)
                                     startActivity((intent))
+                                    this.finish()
                                 }
                                 else{
                                     val mess = task.exception?.message
