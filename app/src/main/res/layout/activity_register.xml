@@ -84,7 +84,7 @@
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:hint="@string/password"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,5 +149,14 @@
         android:textAppearance="@style/sign_in"
         app:layout_constraintStart_toEndOf="@+id/already_have"
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="596dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
