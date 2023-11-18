@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AlgorithmVisualizer" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.DSAV_XML" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.AlgorithmVisualizer" parent="Base.Theme.AlgorithmVisualizer" />
+    <style name="Theme.DSAV_XML" parent="Base.Theme.DSAV_XML" />
 </resources>
