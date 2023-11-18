@@ -59,7 +59,7 @@ class AccountDeleterActivity: AppCompatActivity() {
 
                             Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT)
                                 .show() //output message
-                            this.finish()
+                            //this.finish()
                         }
 
                         else {
