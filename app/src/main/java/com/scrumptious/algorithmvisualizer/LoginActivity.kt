@@ -6,13 +6,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.scrumptious.algorithmvisualizer.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWebException
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     //Activity link to register page
     private lateinit var binding: ActivityLoginBinding
     //Firebase authenticator object
@@ -28,8 +23,9 @@ class Login : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         //when click on the text occurs, run this
         binding.textView.setOnClickListener {
-            val intent = Intent(this, Register::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            this.finish()
         }
         //when click on the login button occurs, run this
         binding.loginButton.setOnClickListener {
@@ -42,8 +38,9 @@ class Login : AppCompatActivity() {
                     if (it.isSuccessful) {
                         Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show() //output message
                         //goes to main activity upon successful login
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, AccountManagerActivity::class.java)
                         startActivity(intent)
+                        //this.finish()
                     } else {
                         Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_SHORT).show() //output message
 

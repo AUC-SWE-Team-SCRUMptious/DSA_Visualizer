@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".Register"
+            android:name=".RegisterActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             >
@@ -31,7 +31,23 @@
 
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".EmailChangerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".PasswordChangerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".AccountManagerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".AccountDeleterActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
     </application>

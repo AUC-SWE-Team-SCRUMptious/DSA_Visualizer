@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWebException
 
-class Register : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     //Activity link to register page
     private lateinit var binding: ActivityRegisterBinding
     //Firebase authenticator object
@@ -24,13 +24,14 @@ class Register : AppCompatActivity() {
         //on click, go to login
         firebaseAuth= FirebaseAuth.getInstance()
         binding.textView2.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            this.finish()
         }
 
         //when any click occurs, run this
         binding.registerButton.setOnClickListener{
-            val email = binding.usernameEditText.text.toString() //grabs the email
+            val email = binding.emailEditText.text.toString() //grabs the email
             val pass = binding.passwordEditText.text.toString() //grabs the pass
             //If both the email and password are inserted do the following
             if(email.isNotEmpty() && pass.isNotEmpty()){
@@ -43,9 +44,10 @@ class Register : AppCompatActivity() {
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show() //output message
-                        //go to the login page
-                        val intent = Intent(this,Login::class.java)
-                        startActivity((intent))
+                                //go to the login page
+                                val intent = Intent(this,LoginActivity::class.java)
+                                startActivity((intent))
+                                //this.finish()
                             }
                             else{
                                 try {
