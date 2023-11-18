@@ -1,26 +1,26 @@
 package com.scrumptious.algorithmvisualizer
 
-class InsertionSortSeqGen{
-    var result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
-    fun generateSeq(arr: Array<Int>){
-        result = mutableListOf()
-        result.add( Pair(arr.copyOf(), emptyArray()))
+class InsertionSort: SequenceStrategy{
+    //var result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+    override fun buildSequence(myData: Array<Int>): MutableList<Pair<Array<Int>, Array<Int>>>{
+        val result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+        result.add( Pair(myData.copyOf(), emptyArray()))
 
-        if(arr.isEmpty()) return
+        if(myData.isEmpty()) return result
 
-        for(i in 1..<arr.size){
+        for(i in 1..<myData.size){
             var j = i
 
-            while (j > 0 && arr[j] < arr[j - 1]) {
+            while (j > 0 && myData[j] < myData[j - 1]) {
                 //swap(arr, j, j - 1)
-                val temp = arr[j]
-                arr[j] = arr[j-1]
-                arr[j-1] = temp
-                result.add(Pair(arr.copyOf(), arrayOf(j,j-1)))
+                val temp = myData[j]
+                myData[j] = myData[j-1]
+                myData[j-1] = temp
+                result.add(Pair(myData.copyOf(), arrayOf(j,j-1)))
                 j--
             }
         }
-
+        return result
     }
 }
 

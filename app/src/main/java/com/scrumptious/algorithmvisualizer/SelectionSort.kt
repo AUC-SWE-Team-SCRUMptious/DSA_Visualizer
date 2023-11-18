@@ -1,41 +1,40 @@
 package com.scrumptious.algorithmvisualizer
 
 
-class SelectionSortSequenceGen {
+class SelectionSort : SequenceStrategy {
 
-    var result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+    override fun buildSequence(myData: Array<Int>): MutableList<Pair<Array<Int>, Array<Int>>> {
+        val result = mutableListOf<Pair<Array<Int>, Array<Int>>>()
+        val steps = mutableListOf(myData.copyOf()) // Initialize the steps array with the initial state
 
-fun selectionSortSequenceGenerator(arr: Array<Int>): Unit {
-    val steps = mutableListOf(arr.copyOf()) // Initialize the steps array with the initial state
+        if (myData.isEmpty()) {
+            return result
+        }
 
-    if (arr.isEmpty()) {
-        return
-    }
+        for (i in 0 until myData.size - 1) {
+            var minIndex = i
+            val swaps = mutableListOf<Int>()
 
-    for (i in 0 until arr.size - 1) {
-        var minIndex = i
-        val swaps = mutableListOf<Int>()
-
-        for (j in i + 1 until arr.size) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j
+            for (j in i + 1 until myData.size) {
+                if (myData[j] < myData[minIndex]) {
+                    minIndex = j
+                }
             }
+
+            if (minIndex != i) {
+                val temp = myData[i]
+                myData[i] = myData[minIndex]
+                myData[minIndex] = temp
+
+                swaps.add(i)
+                swaps.add(minIndex)
+            }
+
+            steps.add(myData.copyOf()) // Store the current state in the steps array
+            result.add(Pair(steps.last().copyOf(), swaps.toTypedArray()))
         }
-
-        if (minIndex != i) {
-            val temp = arr[i]
-            arr[i] = arr[minIndex]
-            arr[minIndex] = temp
-
-            swaps.add(i)
-            swaps.add(minIndex)
-        }
-
-        steps.add(arr.copyOf()) // Store the current state in the steps array
-        result.add(Pair(steps.last().copyOf(), swaps.toTypedArray()))
+        return result
     }
-    return
-}
 }
 
 /*
