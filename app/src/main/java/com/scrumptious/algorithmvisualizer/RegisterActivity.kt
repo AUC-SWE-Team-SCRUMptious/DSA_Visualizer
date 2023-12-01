@@ -37,7 +37,8 @@ class RegisterActivity : AppCompatActivity() {
             val pass = binding.passwordEditText.text.toString() //grabs the pass
             val confirmPass = binding.confirmPasswordEditText.text.toString() //grabs the confirm pass
             //If both the email and password are inserted do the following
-            if(email.isNotEmpty() && pass.isNotEmpty()){
+            if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty())
+            {
                 if (pass==confirmPass)
                 {
                     if (PasswordValidator().validate(this, pass) && EmailValidator().validate(this, email)) //if the password and email are valid, do the following
@@ -82,8 +83,9 @@ class RegisterActivity : AppCompatActivity() {
 
 
 
-            }else{
-                Toast.makeText(this,"Please insert both the email and password before continuing", Toast.LENGTH_SHORT).show() //output message
+            }
+            else{
+                Toast.makeText(this,"Please fill all fields before continuing", Toast.LENGTH_SHORT).show() //output message
             }
         }
     }

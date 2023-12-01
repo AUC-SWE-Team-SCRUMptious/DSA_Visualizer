@@ -44,53 +44,35 @@
         android:layout_width="292dp"
         android:layout_height="30dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:background="#ECECEC"
         android:gravity="center_vertical"
-        android:lineSpacingExtra="4sp"
-        android:paddingStart="16dp"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress"
-        android:textAppearance="@style/email_address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/algorithm_v" />
-
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="292dp"
-        android:layout_height="30dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:background="#ECECEC"
-        android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:hint="@string/username"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enailEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/algorithm_v" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="292dp"
         android:layout_height="30dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
         android:background="#ECECEC"
         android:gravity="center_vertical"
+        android:hint="@string/password"
+        android:inputType="textPassword"
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
-        android:inputType="textPassword"
-        android:hint="@string/password"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        tools:layout_editor_absoluteY="335dp" />
 
     <EditText
         android:id="@+id/confirmPasswordEditText"
