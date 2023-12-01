@@ -42,6 +42,7 @@ class PasswordChangerActivity: AppCompatActivity() {
             val email = binding.usernameEditText.text.toString()
             val pass = binding.passwordEditText.text.toString()
             val newPassword = binding.newPasswordEditText.text.toString()
+            val newPasswordConfirm = binding.newPasswordConfirmEditText.text.toString()
             val user = FirebaseAuth.getInstance().currentUser;
             // Get auth credentials from the user for re-authentication
 
@@ -52,38 +53,49 @@ class PasswordChangerActivity: AppCompatActivity() {
                 val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
                 if (PasswordValidator().validate(this,newPassword))
                 {
-                    user?.reauthenticate(credential)?.addOnCompleteListener {
-                        if (it.isSuccessful){
-                            //changes the password
-                            user.updatePassword(newPassword).addOnCompleteListener { task ->
-                                if (task.isSuccessful) {
-                                    Toast.makeText(
-                                        this,
-                                        "Password Changed",
-                                        Toast.LENGTH_LONG
-                                    ).show()
-                                    val intent = Intent(this,AccountManagerActivity::class.java)
-                                    startActivity((intent))
-                                    this.finish()
-                                }
-                                else{
-                                    val mess = task.exception?.message
-                                    Toast.makeText(this, mess , Toast.LENGTH_SHORT).show() //output message
+                    if (newPassword == newPasswordConfirm) {
+                        user?.reauthenticate(credential)?.addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                //changes the password
+                                user.updatePassword(newPassword).addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        Toast.makeText(
+                                            this,
+                                            "Password Changed",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                        val intent =
+                                            Intent(this, AccountManagerActivity::class.java)
+                                        startActivity((intent))
+                                        this.finish()
+                                    }
+                                    else {
+                                        val mess = task.exception?.message
+                                        Toast.makeText(this, mess, Toast.LENGTH_SHORT)
+                                            .show() //output message
 
+                                    }
                                 }
+
+
                             }
+                            else {
+                                Toast.makeText(
+                                    this,
+                                    "Incorrect email or password",
+                                    Toast.LENGTH_SHORT
+                                ).show() //output message
+                            }
+                        }
 
 
-                        }
-                        else{
-                            Toast.makeText(this, "Incorrect email or password" , Toast.LENGTH_SHORT).show() //output message
-                        }
                     }
 
-
-
                 }
-
+                else
+                {
+                    Toast.makeText(this, "Passwords do not match" , Toast.LENGTH_SHORT).show() //output message
+                }
             }
             else {
                 Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show() //output message
