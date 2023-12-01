@@ -49,7 +49,7 @@
         android:lineSpacingExtra="4sp"
         android:paddingStart="16dp"
         android:hint="Email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -90,8 +90,8 @@
 
     <TextView
         android:id="@+id/sign_up"
-        android:layout_width="51dp"
-        android:layout_height="17dp"
+        android:layout_width="52dp"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="80dp"
         android:gravity="center_horizontal|top"
@@ -115,6 +115,21 @@
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+
+    <TextView
+        android:id="@+id/guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="152dp"
+        android:gravity="top"
+        android:text="@string/continue_as_guest"
+        android:textAppearance="@style/don_t_have"
+        app:layout_constraintHorizontal_bias="0.683"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 

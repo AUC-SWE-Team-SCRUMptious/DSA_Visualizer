@@ -13,6 +13,8 @@ class LoginActivity : AppCompatActivity() {
     //Firebase authenticator object
     private lateinit var firebaseAuth: FirebaseAuth
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -27,6 +29,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             this.finish()
         }
+
+        binding.guest.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         //when click on the login button occurs, run this
         binding.loginButton.setOnClickListener {
             val email = binding.usernameEditText.text.toString()
@@ -38,9 +46,9 @@ class LoginActivity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show() //output message
                         //goes to main activity upon successful login
-                        val intent = Intent(this, AccountManagerActivity::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
-                        //this.finish()
+                        this.finish()
                     } else {
                         Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_SHORT).show() //output message
 

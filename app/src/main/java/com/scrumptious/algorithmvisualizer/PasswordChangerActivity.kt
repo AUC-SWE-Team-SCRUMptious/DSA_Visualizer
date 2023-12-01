@@ -64,7 +64,7 @@ class PasswordChangerActivity: AppCompatActivity() {
                                     ).show()
                                     val intent = Intent(this,AccountManagerActivity::class.java)
                                     startActivity((intent))
-                                    //this.finish()
+                                    this.finish()
                                 }
                                 else{
                                     val mess = task.exception?.message

@@ -29,7 +29,6 @@ class AccountDeleterActivity: AppCompatActivity() {
 
         //go back to account manager
         binding.back.setOnClickListener{
-
             this.finish()
         }
 
@@ -49,7 +48,7 @@ class AccountDeleterActivity: AppCompatActivity() {
             // Prompt the user to re-provide their sign-in credentials
             if (email.isNotEmpty() && pass.isNotEmpty()) {
                     val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
-                    //reauthenticates the user
+                    //re-authenticates the user
                     user?.reauthenticate(credential)?.addOnCompleteListener {
                         if (it.isSuccessful) {
                             //deletes the account and takes them back to the log in page
@@ -59,7 +58,8 @@ class AccountDeleterActivity: AppCompatActivity() {
 
                             Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT)
                                 .show() //output message
-                            //this.finish()
+                            AccountManagerActivity.instance?.finish()
+                            this.finish()
                         }
 
                         else {
