@@ -5,17 +5,22 @@ import android.os.Bundle
 import android.widget.Toast
 import com.scrumptious.algorithmvisualizer.databinding.ActivityAccountManagerBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWebException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class AccountManagerActivity: AppCompatActivity() {
     //Activity link to account manager page
     private lateinit var binding: ActivityAccountManagerBinding
+    companion object {
+
+        @Volatile
+        var instance: AccountManagerActivity? = null
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        instance = this;
         super.onCreate(savedInstanceState)
         binding = ActivityAccountManagerBinding.inflate(layoutInflater)
         //links view to class

@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".RegisterActivity"
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             >
@@ -31,7 +31,7 @@
 
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
         <activity
@@ -44,8 +44,9 @@
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
         <activity
             android:name=".AccountManagerActivity"
+            android:launchMode="singleInstance"
             android:exported="false"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".AccountDeleterActivity"
             android:exported="false"
