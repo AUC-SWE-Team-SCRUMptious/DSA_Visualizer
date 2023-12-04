@@ -7,103 +7,68 @@
     android:background="#BBEEF4"
     tools:context=".MainActivity">
 
+
     <TextView
-        android:id="@+id/select_algo"
+        android:id="@+id/account_manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:gravity="top"
-        android:text="@string/select_algo"
+        android:text="Account Manager"
         android:textAppearance="@style/select_algo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/algo_bubble_sort"
+        android:id="@+id/reset_password_username"
         android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="50dp"
-        android:background="#ECECEC"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="4sp"
-        android:paddingStart ="16dp"
-        android:text = "Bubble Sort"
-        android:textAppearance="@style/email_address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select_algo" />
-
-    <Button
-        android:id="@+id/algo_selection_sort"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
-        android:text="Selection Sort"
-        android:background="#ECECEC"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="4sp"
-        android:paddingStart ="16dp"
-        android:textAppearance="@style/email_address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/algo_bubble_sort" />
-
-    <Button
-        android:id="@+id/algo_insertion_sort"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#ECECEC"
         android:gravity="center_vertical"
         android:lineSpacingExtra="4sp"
         android:paddingStart ="16dp"
-        android:text = "Insertion Sort"
+        android:text = "Reset: Password \/ Username"
         android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/algo_selection_sort" />
+        app:layout_constraintTop_toBottomOf="@+id/account_manager" />
 
-    <View
-        android:id="@+id/bubblesort"
-        android:layout_width="72dp"
-        android:layout_height="74dp"
-        android:background="@drawable/bubblesort"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/theme_settings"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Theme Settings"
+        android:background="#ECECEC"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:paddingStart ="16dp"
+        android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintTop_toBottomOf="@+id/reset_password_username" />
 
-    <View
-        android:id="@+id/selectionsort"
-        android:layout_width="72dp"
-        android:layout_height="74dp"
-        android:background="@drawable/selectionsort"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/subscription"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Subscription"
+        android:background="#ECECEC"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4sp"
+        android:paddingStart ="16dp"
+        android:textAppearance="@style/email_address"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.321" />
-
-    <View
-        android:id="@+id/insertionsort"
-        android:layout_width="72dp"
-        android:layout_height="74dp"
-        android:background="@drawable/insertionsort"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintTop_toBottomOf="@+id/theme_settings" />
 
     <Button
         android:id="@+id/BackButton"
@@ -121,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
