@@ -38,7 +38,18 @@ class AlgorithmPageActivity: AppCompatActivity() {
                 return@setOnClickListener
             }
             else if(datavalidator_instance.dataStatus == "Input is valid and not sorted"){
-                Toast.makeText(this, "Input is valid and not sorted", Toast.LENGTH_SHORT).show()
+                // To pass data to sequence generator use the following
+                val seqGen = SequenceGenerator()
+                // Sequence strategy is the abstract interface
+                // for each strategy call a specific object of its generattor
+                // for example
+
+                val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(BubbleSort(),datavalidator_instance.validData)// your data here
+
+                val intent = Intent(this, AnimationControllerActivity::class.java)
+                intent.putExtra("dataKey", ArrayList(myList)) // ArrayList is parcelable
+
+                startActivity(intent)
             }
             else if(datavalidator_instance.dataStatus == "Input includes a non number"){
                 Toast.makeText(this, "Input includes a non number", Toast.LENGTH_SHORT).show()
@@ -61,18 +72,7 @@ class AlgorithmPageActivity: AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // To pass data to sequence generator use the following
-            val seqGen = SequenceGenerator()
-            // Sequence strategy is the abstract interface
-            // for each strategy call a specific object of its generattor
-            // for example
 
-            val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(BubbleSort(),datavalidator_instance.validData)// your data here
-
-            val intent = Intent(this, AnimationControllerActivity::class.java)
-            intent.putExtra("dataKey", ArrayList(myList)) // ArrayList is parcelable
-
-            startActivity(intent)
 
 
         }
