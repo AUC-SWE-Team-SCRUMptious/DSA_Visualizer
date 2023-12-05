@@ -33,6 +33,34 @@ class AlgorithmPageActivity: AppCompatActivity() {
             // else if its "Input has more than 20 elements" then warn user that input has more than 20 elements
             // else if its "Null input" then warn user that input is null
 
+            if(datavalidator_instance.dataStatus == "Input is valid and sorted"){
+                Toast.makeText(this, "Input is already sorted", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if(datavalidator_instance.dataStatus == "Input is valid and not sorted"){
+                Toast.makeText(this, "Input is valid and not sorted", Toast.LENGTH_SHORT).show()
+            }
+            else if(datavalidator_instance.dataStatus == "Input includes a non number"){
+                Toast.makeText(this, "Input includes a non number", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if(datavalidator_instance.dataStatus == "Input is out of range"){
+                Toast.makeText(this, "Input is out of range", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if(datavalidator_instance.dataStatus == "Input has more than 20 elements"){
+                Toast.makeText(this, "Input has more than 20 elements", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if(datavalidator_instance.dataStatus == "Null input"){
+                Toast.makeText(this, "Null input", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else{
+                Toast.makeText(this, "Unknown error", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             // To pass data to sequence generator use the following
             val seqGen = SequenceGenerator()
             // Sequence strategy is the abstract interface
