@@ -15,10 +15,10 @@ import com.github.mikephil.charting.data.BarEntry
 import java.util.ArrayList
 
 class AnimationControllerActivity: AppCompatActivity() {
-    lateinit var barChart: BarChart
-    lateinit var barData: BarData
-    lateinit var barDataSet: BarDataSet
-    lateinit var barEntriesList: ArrayList<BarEntry>
+    private lateinit var barChart: BarChart
+    private lateinit var barData: BarData
+    private lateinit var barDataSet: BarDataSet
+    private lateinit var barEntriesList: ArrayList<BarEntry>
 
     /*var dataArray: MutableList<Pair<Array<Int>, Array<Int>>> = mutableListOf(
         Pair(arrayOf(103, 35, 34, 23, 11), arrayOf(0, 1)),
