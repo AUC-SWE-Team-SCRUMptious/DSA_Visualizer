@@ -22,6 +22,22 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         var user = firebaseAuth.getCurrentUser()
 
+
+        binding.algoBubbleSort.setOnClickListener {
+            val intent = Intent(this, BubbleSortPageActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.algoInsertionSort.setOnClickListener {
+            val intent = Intent(this, InsertionSortPageActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.algoSelectionSort.setOnClickListener {
+            val intent = Intent(this, SelectionSortPageActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.accountManager.setOnClickListener {
             if (user!=null)
             {

@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/select_algo"
+        android:id="@+id/selectAlgo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
-        android:id="@+id/algo_bubble_sort"
+        android:id="@+id/algoBubbleSort"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_marginTop="50dp"
@@ -34,10 +34,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select_algo" />
+        app:layout_constraintTop_toBottomOf="@+id/selectAlgo" />
 
     <Button
-        android:id="@+id/algo_selection_sort"
+        android:id="@+id/algoSelectionSort"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_marginTop="20dp"
@@ -50,10 +50,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/algo_bubble_sort" />
+        app:layout_constraintTop_toBottomOf="@+id/algoBubbleSort" />
 
     <Button
-        android:id="@+id/algo_insertion_sort"
+        android:id="@+id/algoInsertionSort"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_marginTop="20dp"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/algo_selection_sort" />
+        app:layout_constraintTop_toBottomOf="@+id/algoSelectionSort" />
 
     <View
         android:id="@+id/bubblesort"
@@ -124,7 +124,7 @@
         app:layout_constraintVertical_bias="0.95" />
 
     <Button
-        android:id="@+id/account_manager"
+        android:id="@+id/accountManager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
