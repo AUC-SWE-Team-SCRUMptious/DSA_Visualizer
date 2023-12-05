@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AlgorithmVisualizer"
+        android:theme="@style/Theme.Material3.Light.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".Register"
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             >
@@ -31,7 +31,24 @@
 
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".EmailChangerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".PasswordChangerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".AccountManagerActivity"
+            android:launchMode="singleInstance"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+        <activity
+            android:name=".AccountDeleterActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
     </application>
