@@ -57,7 +57,15 @@
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
         
         <activity
-            android:name=".AlgorithmPageActivity"
+            android:name=".BubbleSortPageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".InsertionSortPageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".SelectionSortPageActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
     </application>

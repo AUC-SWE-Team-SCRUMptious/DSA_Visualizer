@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/data_input"
+        android:id="@+id/dataInput"
         android:layout_width="354dp"
         android:layout_height="35dp"
         android:layout_marginTop="400dp"
