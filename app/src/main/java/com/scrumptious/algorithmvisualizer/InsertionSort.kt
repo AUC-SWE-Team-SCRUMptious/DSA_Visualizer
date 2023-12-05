@@ -13,13 +13,14 @@ class InsertionSort: SequenceStrategy{
 
             while (j > 0 && myData[j] < myData[j - 1]) {
                 //swap(arr, j, j - 1)
+                result.add(Pair(myData.copyOf(), arrayOf(j,j-1)))
                 val temp = myData[j]
                 myData[j] = myData[j-1]
                 myData[j-1] = temp
-                result.add(Pair(myData.copyOf(), arrayOf(j,j-1)))
                 j--
             }
         }
+        result.add(Pair(myData.copyOf(), arrayOf()))
         return result
     }
 }

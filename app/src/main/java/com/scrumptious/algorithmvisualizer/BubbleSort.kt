@@ -11,11 +11,11 @@ class BubbleSort : SequenceStrategy{
             var swapped = false
             for (j in 0 until n - i - 1) {
                 if (sortArr[j] > sortArr[j + 1]) {
+                    val indices = arrayOf(j, j + 1)
+                    result.add(Pair(sortArr.copyOf(), indices))
                     val temp = sortArr[j]
                     sortArr[j] = sortArr[j + 1]
                     sortArr[j + 1] = temp
-                    val indices = arrayOf(j, j + 1)
-                    result.add(Pair(sortArr.copyOf(), indices))
                     swapped = true
                 }
             }
@@ -23,6 +23,7 @@ class BubbleSort : SequenceStrategy{
                 break
             }
         }
+        result.add(Pair(sortArr.copyOf(), emptyArray<Int>()))
         return result
     }
 }
