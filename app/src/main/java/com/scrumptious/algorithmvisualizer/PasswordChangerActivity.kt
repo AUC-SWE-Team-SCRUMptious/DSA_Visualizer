@@ -43,14 +43,14 @@ class PasswordChangerActivity: AppCompatActivity() {
             val pass = binding.passwordEditText.text.toString()
             val newPassword = binding.newPasswordEditText.text.toString()
             val newPasswordConfirm = binding.newPasswordConfirmEditText.text.toString()
-            val user = FirebaseAuth.getInstance().currentUser;
+            val user = FirebaseAuth.getInstance().currentUser
             // Get auth credentials from the user for re-authentication
 
 
             // Prompt the user to re-provide their sign-in credentials
             // Prompt the user to re-provide their sign-in credentials
             if (email.isNotEmpty() && pass.isNotEmpty() && newPassword.isNotEmpty()){
-                val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
+                val credential = EmailAuthProvider.getCredential(email, pass) // Current Login Credentials
                 if (PasswordValidator().validate(this,newPassword))
                 {
                     if (newPassword == newPasswordConfirm) {

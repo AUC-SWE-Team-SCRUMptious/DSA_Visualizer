@@ -12,26 +12,26 @@ class PasswordValidator : UserInfoValidator{
         var lowercaseReq = false
         var numReq = false
         var valid = false
-        lengthCheck = pass.length in 6..20;
+        lengthCheck = pass.length in 6..20
 
         //go over every character in a password
         for (item in pass.indices){
             // check if it is a digit and mark the numeric requirement as true if so
             if (pass[item].isDigit())
             {
-                numReq = true;
+                numReq = true
             }
             else
             {
                 //check if the character is uppercase and mark the uppercase requirement if the character is uppercase and the requirement hasn't been met yet
                 if (pass[item] == pass[item].uppercaseChar() && !uppercaseReq)
                 {
-                    uppercaseReq = true;
+                    uppercaseReq = true
                 }
                 //check if the character is lowercase and mark the lowercase requirement if the character is lowercase and the requirement hasn't been met yet
                 if (pass[item] == pass[item].lowercaseChar() && !lowercaseReq)
                 {
-                    lowercaseReq = true;
+                    lowercaseReq = true
                 }
             }
         }
@@ -48,6 +48,6 @@ class PasswordValidator : UserInfoValidator{
         if (!numReq){
             Toast.makeText(page,"Password should contain at least one number", Toast.LENGTH_SHORT).show() //output message
         }
-        return lengthCheck && uppercaseReq && lowercaseReq && numReq;
+        return lengthCheck && uppercaseReq && lowercaseReq && numReq
     }
 }

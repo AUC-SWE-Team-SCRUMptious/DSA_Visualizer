@@ -41,14 +41,14 @@ class EmailChangerActivity: AppCompatActivity() {
             val email = binding.usernameEditText.text.toString()
             val pass = binding.passwordEditText.text.toString()
             val newEmail = binding.newEmailEditText.text.toString()
-            val user = FirebaseAuth.getInstance().currentUser;
+            val user = FirebaseAuth.getInstance().currentUser
             // Get auth credentials from the user for re-authentication
 
 
             // Prompt the user to re-provide their sign-in credentials
             // Prompt the user to re-provide their sign-in credentials
             if (email.isNotEmpty() && pass.isNotEmpty() && newEmail.isNotEmpty()) {
-                val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
+                val credential = EmailAuthProvider.getCredential(email, pass) // Current Login Credentials
                 if (EmailValidator().validate(this,newEmail))
                 {
                     user?.reauthenticate(credential)?.addOnCompleteListener {

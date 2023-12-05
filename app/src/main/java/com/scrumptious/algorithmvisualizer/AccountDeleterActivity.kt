@@ -40,14 +40,14 @@ class AccountDeleterActivity: AppCompatActivity() {
             val pass = binding.passwordEditText.text.toString()
 
             //user object
-            val user = FirebaseAuth.getInstance().currentUser;
+            val user = FirebaseAuth.getInstance().currentUser
             // Get auth credentials from the user for re-authentication
 
 
             // Prompt the user to re-provide their sign-in credentials
             // Prompt the user to re-provide their sign-in credentials
             if (email.isNotEmpty() && pass.isNotEmpty()) {
-                    val credential = EmailAuthProvider.getCredential(email, pass); // Current Login Credentials
+                    val credential = EmailAuthProvider.getCredential(email, pass) // Current Login Credentials
                     //re-authenticates the user
                     user?.reauthenticate(credential)?.addOnCompleteListener {
                         if (it.isSuccessful) {

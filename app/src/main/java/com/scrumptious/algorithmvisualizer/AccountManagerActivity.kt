@@ -20,7 +20,7 @@ class AccountManagerActivity: AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        instance = this;
+        instance = this
         super.onCreate(savedInstanceState)
         binding = ActivityAccountManagerBinding.inflate(layoutInflater)
         //links view to class
