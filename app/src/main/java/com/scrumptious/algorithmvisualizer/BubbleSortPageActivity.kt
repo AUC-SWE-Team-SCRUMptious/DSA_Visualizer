@@ -14,16 +14,19 @@ class BubbleSortPageActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        val input = binding.dataInput.text.toString()
         binding = ActivityBubbleSortPageBinding.inflate(layoutInflater)
         //links view to class
         setContentView(binding.root)
 
         //go back to select screen
+        binding.back.setOnClickListener {
+            this.finish()
+        }
 
         binding.start.setOnClickListener{
             val dataValidator = DataValidator()
-            dataValidator.validate(binding.dataInput.text.toString())
+            dataValidator.validate(input)
             // check data status
             // if Its "Input is valid and sorted" then warn user that its already sorted
             // else if its "Input is valid and not sorted" then proceed to next activity
