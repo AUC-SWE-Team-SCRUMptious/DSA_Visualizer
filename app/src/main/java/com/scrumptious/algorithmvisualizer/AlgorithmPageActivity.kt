@@ -22,7 +22,7 @@ class AlgorithmPageActivity: AppCompatActivity() {
 
         //go back to select screen
 
-        binding.back.setOnClickListener{
+        binding.generateSequence.setOnClickListener{
             val datavalidator_instance = DataValidator()
             datavalidator_instance.validate(/*Input data to be tested*/)
             // check data status
@@ -46,24 +46,20 @@ class AlgorithmPageActivity: AppCompatActivity() {
 
             startActivity(intent)
 
+
+        }
+
+
+
+
+
+        binding.back.setOnClickListener {
+
             this.finish()
 
-        }
-
-
-
-
-        //delete the account
-        /*
-        binding.button.setOnClickListener {
-
-            val intent = Intent(this, AnimationControllerActivity::class.java)
-            startActivity(intent)
-
 
         }
 
-         */
     }
 
 
