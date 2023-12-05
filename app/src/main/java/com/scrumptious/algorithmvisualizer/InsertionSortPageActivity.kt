@@ -14,7 +14,7 @@ class InsertionSortPageActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val input = binding.dataInput.text.toString()
+
         binding = ActivityInsertionSortPageBinding.inflate(layoutInflater)
         //links view to class
         setContentView(binding.root)
@@ -25,6 +25,7 @@ class InsertionSortPageActivity: AppCompatActivity() {
         }
 
         binding.start.setOnClickListener{
+            val input = binding.dataInput.text.toString()
             val dataValidatorInstance = DataValidator()
             dataValidatorInstance.validate(input)
             // check data status

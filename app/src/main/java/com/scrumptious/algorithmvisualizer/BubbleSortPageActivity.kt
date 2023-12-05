@@ -14,7 +14,6 @@ class BubbleSortPageActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val input = binding.dataInput.text.toString()
         binding = ActivityBubbleSortPageBinding.inflate(layoutInflater)
         //links view to class
         setContentView(binding.root)
@@ -25,6 +24,7 @@ class BubbleSortPageActivity: AppCompatActivity() {
         }
 
         binding.start.setOnClickListener{
+            val input = binding.dataInput.text.toString()
             val dataValidator = DataValidator()
             dataValidator.validate(input)
             // check data status

@@ -14,7 +14,7 @@ class SelectionSortPageActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val input = binding.dataInput.text.toString()
+
         binding = ActivitySelectionSortPageBinding.inflate(layoutInflater)
         //links view to class
         setContentView(binding.root)
@@ -26,6 +26,7 @@ class SelectionSortPageActivity: AppCompatActivity() {
 
         //run the algorithm
         binding.start.setOnClickListener{
+            val input = binding.dataInput.text.toString()
             val dataValidatorInstance = DataValidator()
             dataValidatorInstance.validate(input)
             // check data status
