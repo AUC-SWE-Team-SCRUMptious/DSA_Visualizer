@@ -42,7 +42,7 @@ class SelectionSortPageActivity: AppCompatActivity() {
                 // for each strategy call a specific object of its generattor
                 // for example
 
-                val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(SelectionSort(),datavalidator_instance.validData)// your data here
+                val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(SelectionSort(),datavalidator_instance.validData.toTypedArray())// your data here
 
                 val intent = Intent(this, AnimationControllerActivity::class.java)
                 intent.putExtra("dataKey", ArrayList(myList)) // ArrayList is parcelable
