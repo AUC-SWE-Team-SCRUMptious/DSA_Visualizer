@@ -30,8 +30,8 @@ class SelectionSort : SequenceStrategy {
                 swaps.add(minIndex)
             }
 
-            steps.add(myData.copyOf()) // Store the current state in the steps array
             result.add(Pair(steps.last().copyOf(), swaps.toTypedArray()))
+            steps.add(myData.copyOf()) // Store the current state in the steps array
         }
         return result
     }
