@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
@@ -237,7 +238,7 @@ class AnimationControllerActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_animation_controller)
 
         barChart = findViewById(R.id.barChart)
         speedSeekBar = findViewById(R.id.speedSeekBar)
@@ -358,7 +359,7 @@ class AnimationControllerActivity: AppCompatActivity() {
         getBarChartData(values)
 
         // Set color for all bars to the default color
-        val defaultColor = resources.getColor(R.color.purple_200)
+        val defaultColor = ContextCompat.getColor(this, R.color.purple_200)
         val colors = MutableList(barEntriesList.size) { defaultColor }
 
         // Set color for highlighted indices

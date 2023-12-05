@@ -31,6 +31,10 @@
 
         </activity>
         <activity
+            android:name=".AnimationControllerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
             android:name=".RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
@@ -51,10 +55,7 @@
             android:name=".AccountDeleterActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar"/>
-        <activity
-            android:name=".AnimationControllerActivity"
-            android:exported="false"
-            android:theme="@style/Theme.BarTest"/>
+        
         <activity
             android:name=".AlgorithmPageActivity"
             android:exported="false"

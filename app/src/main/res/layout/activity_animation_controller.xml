@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingClass">
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Play/Pause"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/speedUpButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Speed Up"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/slowDownButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Slow Down"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Restart"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/buttonLayout"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/prevButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Previous"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Next"/>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/speedSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secondButtonLayout"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:max="128"/>
+
+    <TextView
+        android:id="@+id/speedValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/speedSeekBar"
+        android:layout_marginTop="8dp"
+        android:text="Speed: x1"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center_horizontal"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/speedValueTextView"
+        android:layout_marginTop="8dp"/>
+
+</RelativeLayout>

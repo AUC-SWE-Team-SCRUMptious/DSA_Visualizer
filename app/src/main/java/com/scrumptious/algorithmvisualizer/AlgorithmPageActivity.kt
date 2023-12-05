@@ -21,12 +21,16 @@ class AlgorithmPageActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         //go back to select screen
+        /*
         binding.back.setOnClickListener{
             this.finish()
         }
 
+         */
+
 
         //delete the account
+        /*
         binding.button.setOnClickListener {
 
             val intent = Intent(this, AnimationControllerActivity::class.java)
@@ -34,9 +38,10 @@ class AlgorithmPageActivity: AppCompatActivity() {
 
 
         }
+
+         */
     }
 
-}
 
 
 }
