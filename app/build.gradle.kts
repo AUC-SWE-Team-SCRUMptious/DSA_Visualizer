@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.scrumptious.algorithmvisualizer"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.scrumptious.algorithmvisualizer"
@@ -42,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.2"
     }
     packaging {
         resources {

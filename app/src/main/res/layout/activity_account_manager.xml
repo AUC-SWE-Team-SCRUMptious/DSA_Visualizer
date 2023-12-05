@@ -7,7 +7,8 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/change_email"ndroid:background="#FFFFFF"
+        android:id="@+id/change_email"
+        android:background="#FFFFFF"
         android:layout_width="405dp"
         android:layout_height="43dp"
         android:layout_marginTop="424dp"
