@@ -21,12 +21,36 @@ class AlgorithmPageActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         //go back to select screen
-        /*
+
         binding.back.setOnClickListener{
+            val datavalidator_instance = DataValidator()
+            datavalidator_instance.validate(/*Input data to be tested*/)
+            // check data status
+            // if Its "Input is valid and sorted" then warn user that its already sorted
+            // else if its "Input is valid and not sorted" then proceed to next activity
+            // else if its "Input includes a non number" then warn user that input includes a non number
+            // else if its "Input is out of range" then warn user that input is out of range
+            // else if its "Input has more than 20 elements" then warn user that input has more than 20 elements
+            // else if its "Null input" then warn user that input is null
+
+            // To pass data to sequence generator use the following
+            val seqGen = SequenceGenerator()
+            // Sequence strategy is the abstract interface
+            // for each strategy call a specific object of its generattor
+            // for example
+
+            val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(BubbleSort(),datavalidator_instance.validData)// your data here
+
+            val intent = Intent(this, AnimationControllerActivity::class.java)
+            intent.putExtra("dataKey", ArrayList(myList)) // ArrayList is parcelable
+
+            startActivity(intent)
+
             this.finish()
+
         }
 
-         */
+
 
 
         //delete the account

@@ -19,6 +19,7 @@ class AnimationControllerActivity: AppCompatActivity() {
     lateinit var barData: BarData
     lateinit var barDataSet: BarDataSet
     lateinit var barEntriesList: ArrayList<BarEntry>
+    val dataArray
 
     /*var dataArray: MutableList<Pair<Array<Int>, Array<Int>>> = mutableListOf(
         Pair(arrayOf(103, 35, 34, 23, 11), arrayOf(0, 1)),
