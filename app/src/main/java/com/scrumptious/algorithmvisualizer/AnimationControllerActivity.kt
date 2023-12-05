@@ -20,7 +20,7 @@ class AnimationControllerActivity: AppCompatActivity() {
     private lateinit var barDataSet: BarDataSet
     private lateinit var barEntriesList: ArrayList<BarEntry>
 
-    val dataArray = intent.extras?.get("dataKey") as MutableList<Pair<Array<Int>, Array<Int>>> // ArrayList is parcelable
+    val dataArray = intent.getIntegerArrayListExtra("dataKey") // ArrayList is parcelable
 
     /*var dataArray: MutableList<Pair<Array<Int>, Array<Int>>> = mutableListOf(
         Pair(arrayOf(103, 35, 34, 23, 11), arrayOf(0, 1)),

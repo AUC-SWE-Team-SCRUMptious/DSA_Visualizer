@@ -25,8 +25,8 @@ class BubbleSortPageActivity: AppCompatActivity() {
 
         binding.start.setOnClickListener{
             val input = binding.dataInput.text.toString()
-            val dataValidator = DataValidator()
-            dataValidator.validate(input)
+            val dataValidatorInstance = DataValidator()
+            dataValidatorInstance.validate(input)
             // check data status
             // if Its "Input is valid and sorted" then warn user that its already sorted
             // else if its "Input is valid and not sorted" then proceed to next activity
@@ -35,37 +35,37 @@ class BubbleSortPageActivity: AppCompatActivity() {
             // else if its "Input has more than 20 elements" then warn user that input has more than 20 elements
             // else if its "Null input" then warn user that input is null
 
-            if(dataValidator.dataStatus == "Input is valid and sorted"){
+            if(dataValidatorInstance.dataStatus == "Input is valid and sorted"){
                 Toast.makeText(this, "Input is already sorted", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if(dataValidator.dataStatus == "Input is valid and not sorted"){
+            else if(dataValidatorInstance.dataStatus == "Input is valid and not sorted"){
                 // To pass data to sequence generator use the following
                 val seqGen = SequenceGenerator()
                 // Sequence strategy is the abstract interface
                 // for each strategy call a specific object of its generator
                 // for example
 
-                val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(BubbleSort(),dataValidator.validData.toTypedArray())// your data here
+                val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(BubbleSort(),dataValidatorInstance.validData.toTypedArray())// your data here
 
                 val intent = Intent(this, AnimationControllerActivity::class.java)
-                intent.putExtra("dataKey", ArrayList(myList)) // ArrayList is parcelable
+                intent.putIntegerArrayListExtra("dataKey", ArrayList(dataValidatorInstance.validData)) // ArrayList is parcelable
 
                 startActivity(intent)
             }
-            else if(dataValidator.dataStatus == "Input includes a non number"){
+            else if(dataValidatorInstance.dataStatus == "Input includes a non number"){
                 Toast.makeText(this, "Input includes a non number", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if(dataValidator.dataStatus == "Input is out of range"){
+            else if(dataValidatorInstance.dataStatus == "Input is out of range"){
                 Toast.makeText(this, "Input is out of range", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if(dataValidator.dataStatus == "Input has more than 20 elements"){
+            else if(dataValidatorInstance.dataStatus == "Input has more than 20 elements"){
                 Toast.makeText(this, "Input has more than 20 elements", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if(dataValidator.dataStatus == "Null input"){
+            else if(dataValidatorInstance.dataStatus == "Null input"){
                 Toast.makeText(this, "Null input", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }

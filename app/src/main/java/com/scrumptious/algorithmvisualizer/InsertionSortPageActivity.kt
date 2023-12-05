@@ -50,7 +50,7 @@ class InsertionSortPageActivity: AppCompatActivity() {
                 val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(InsertionSort(),dataValidatorInstance.validData.toTypedArray())// your data here
 
                 val intent = Intent(this, AnimationControllerActivity::class.java)
-                intent.putExtra("dataKey", ArrayList(myList)) // ArrayList is parcelable
+                intent.putIntegerArrayListExtra("dataKey", ArrayList(dataValidatorInstance.validData)) // ArrayList is parcelable
 
                 startActivity(intent)
             }
