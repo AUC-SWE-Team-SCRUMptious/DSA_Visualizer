@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -58,10 +57,29 @@
         app:layout_constraintTop_toBottomOf="@+id/algorithm_v" />
 
     <EditText
+        android:id="@+id/confirmPasswordEditText"
+        android:layout_width="292dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:background="#ECECEC"
+        android:gravity="center_vertical"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:lineSpacingExtra="4sp"
+        android:paddingStart="16dp"
+        android:textAppearance="@style/email_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+
+    <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="292dp"
         android:layout_height="30dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:background="#ECECEC"
         android:gravity="center_vertical"
         android:hint="@string/password"
@@ -72,25 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="335dp" />
-
-    <EditText
-        android:id="@+id/confirmPasswordEditText"
-        android:layout_width="292dp"
-        android:layout_height="30dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:background="#ECECEC"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="4sp"
-        android:paddingStart="16dp"
-        android:inputType="textPassword"
-        android:hint="@string/confirm_password"
-        android:textAppearance="@style/email_address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/enailEditText" />
 
     <Button
         android:id="@+id/registerButton"
