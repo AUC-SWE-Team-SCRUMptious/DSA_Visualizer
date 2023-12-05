@@ -20,7 +20,19 @@ class AnimationControllerActivity: AppCompatActivity() {
     private lateinit var barDataSet: BarDataSet
     private lateinit var barEntriesList: ArrayList<BarEntry>
 
-    val dataArray = intent.getIntegerArrayListExtra("dataKey") // ArrayList is parcelable
+    //val myList = intent.getIntegerArrayListExtra("dataKey") // ArrayList is parcelable
+    //val myList = intent.extras?.get("dataKey") as Array<Int>
+    //val myArray: Array<Int> = myList?.toTypedArray() ?: emptyArray()
+    //val myList = intent.getIntegerArrayListExtra("dataKey")
+    //val myList: Array<Int> = integerArrayList?.toTypedArray() ?: emptyArray()
+
+// Now you can use myList as an Array<Int>
+
+    //val seqGen = SequenceGenerator()
+    var dataArray: MutableList<Pair<Array<Int>, Array<Int>>> = mutableListOf(
+        Pair(arrayOf(103, 35, 34, 23, 11), arrayOf(0, 1))
+    )
+    //= seqGen.buildSequence(BubbleSort(),myList)// your data here
 
     /*var dataArray: MutableList<Pair<Array<Int>, Array<Int>>> = mutableListOf(
         Pair(arrayOf(103, 35, 34, 23, 11), arrayOf(0, 1)),
@@ -244,6 +256,10 @@ class AnimationControllerActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animation_controller)
+
+        val myList = intent.extras?.get("dataKey") as Array<Int>
+        val seqGen = SequenceGenerator()
+        dataArray = seqGen.buildSequence(BubbleSort(),myList)
 
         barChart = findViewById(R.id.barChart)
         speedSeekBar = findViewById(R.id.speedSeekBar)

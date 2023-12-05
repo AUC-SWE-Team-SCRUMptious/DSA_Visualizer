@@ -43,15 +43,15 @@ class SelectionSortPageActivity: AppCompatActivity() {
             }
             else if(dataValidatorInstance.dataStatus == "Input is valid and not sorted"){
                 // To pass data to sequence generator use the following
-                val seqGen = SequenceGenerator()
+                //val seqGen = SequenceGenerator()
                 // Sequence strategy is the abstract interface
                 // for each strategy call a specific object of its generator
                 // for example
 
-                val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(SelectionSort(),dataValidatorInstance.validData.toTypedArray())// your data here
+                //val myList: MutableList<Pair<Array<Int>, Array<Int>>> = seqGen.buildSequence(SelectionSort(),dataValidatorInstance.validData.toTypedArray())// your data here
 
                 val intent = Intent(this, AnimationControllerActivity::class.java)
-                intent.putIntegerArrayListExtra("dataKey", ArrayList(dataValidatorInstance.validData)) // ArrayList is parcelable
+                intent.putExtra("dataKey", (dataValidatorInstance.validData.toTypedArray())) // ArrayList is parcelable
 
                 startActivity(intent)
             }
