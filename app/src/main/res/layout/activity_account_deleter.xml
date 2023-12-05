@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#BBEEF4"
     android:layout_height="match_parent">
     <!-- Username Input -->
 
@@ -12,38 +13,38 @@
         android:id="@+id/usernameEditText"
         android:layout_width="260dp"
         android:layout_height="48dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="198dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="208dp"
         android:autofillHints="username"
-        android:background="#FFFFFF"
-        android:ems="10"
+        android:background="#ECECEC"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:textAppearance="@style/email_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="260dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="269dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="288dp"
         android:autofillHints="password"
-        android:background="#FFFFFF"
-        android:ems="10"
+        android:background="#ECECEC"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:textAppearance="@style/email_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="515dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="536dp"
         android:text="Delete Account"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
